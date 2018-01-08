@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		33E8573CA88B288FA969794C /* Pods_GithubRepoBrowserTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EC0D4452C701624195301FD /* Pods_GithubRepoBrowserTests.framework */; };
+		3C2ABE1D2003702D009F662F /* GHReposityListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE1C2003702D009F662F /* GHReposityListService.swift */; };
+		3C2ABE2220038EB5009F662F /* GHReposityListServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE2120038EB5009F662F /* GHReposityListServiceSpec.swift */; };
 		5AEE1829A0F4C99B5D9F7660 /* Pods_GithubRepoBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8EFAE441103AD9AE26E71E2 /* Pods_GithubRepoBrowser.framework */; };
 		C4754C8B1FFBFFB5002A1F61 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4754C8A1FFBFFB5002A1F61 /* Result.swift */; };
 		C4754C8D1FFC01EA002A1F61 /* GHResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4754C8C1FFC01EA002A1F61 /* GHResponse.swift */; };
@@ -16,7 +18,6 @@
 		C4754C961FFC0F1F002A1F61 /* GHClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4754C951FFC0F1F002A1F61 /* GHClientSpec.swift */; };
 		C4754C991FFC1977002A1F61 /* GHRequestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4754C981FFC1977002A1F61 /* GHRequestSpec.swift */; };
 		C4754C9C1FFC1B2E002A1F61 /* GHRepositoryList01.json in Resources */ = {isa = PBXBuildFile; fileRef = C4754C9B1FFC1B2E002A1F61 /* GHRepositoryList01.json */; };
-		C4754C9E1FFC1B64002A1F61 /* GHReposityListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4754C9D1FFC1B64002A1F61 /* GHReposityListService.swift */; };
 		C4754CA01FFC1BF4002A1F61 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4754C9F1FFC1BF4002A1F61 /* Repository.swift */; };
 		C4754CA21FFC1C1B002A1F61 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4754CA11FFC1C1B002A1F61 /* User.swift */; };
 		C4A4054F1FFBFD3800BC54FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A4054E1FFBFD3800BC54FC /* AppDelegate.swift */; };
@@ -24,7 +25,6 @@
 		C4A405541FFBFD3800BC54FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A405521FFBFD3800BC54FC /* Main.storyboard */; };
 		C4A405561FFBFD3800BC54FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4A405551FFBFD3800BC54FC /* Assets.xcassets */; };
 		C4A405591FFBFD3800BC54FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A405571FFBFD3800BC54FC /* LaunchScreen.storyboard */; };
-		C4A405641FFBFD3800BC54FC /* GithubRepoBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A405631FFBFD3800BC54FC /* GithubRepoBrowserTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		0EC0D4452C701624195301FD /* Pods_GithubRepoBrowserTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubRepoBrowserTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C2ABE1C2003702D009F662F /* GHReposityListService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GHReposityListService.swift; sourceTree = "<group>"; };
+		3C2ABE2120038EB5009F662F /* GHReposityListServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHReposityListServiceSpec.swift; sourceTree = "<group>"; };
 		5B030825F062B09874930B5F /* Pods-GithubRepoBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubRepoBrowser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GithubRepoBrowser/Pods-GithubRepoBrowser.debug.xcconfig"; sourceTree = "<group>"; };
 		6E0476368450C4A631D7B57F /* Pods-GithubRepoBrowserTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubRepoBrowserTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GithubRepoBrowserTests/Pods-GithubRepoBrowserTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B2DACD4291C1E1C1E1ADA491 /* Pods-GithubRepoBrowserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubRepoBrowserTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GithubRepoBrowserTests/Pods-GithubRepoBrowserTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -50,7 +52,6 @@
 		C4754C951FFC0F1F002A1F61 /* GHClientSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHClientSpec.swift; sourceTree = "<group>"; };
 		C4754C981FFC1977002A1F61 /* GHRequestSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHRequestSpec.swift; sourceTree = "<group>"; };
 		C4754C9B1FFC1B2E002A1F61 /* GHRepositoryList01.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GHRepositoryList01.json; sourceTree = "<group>"; };
-		C4754C9D1FFC1B64002A1F61 /* GHReposityListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHReposityListService.swift; sourceTree = "<group>"; };
 		C4754C9F1FFC1BF4002A1F61 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		C4754CA11FFC1C1B002A1F61 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C4A4054B1FFBFD3800BC54FC /* GithubRepoBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubRepoBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,7 +62,6 @@
 		C4A405581FFBFD3800BC54FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4A4055A1FFBFD3800BC54FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4A4055F1FFBFD3800BC54FC /* GithubRepoBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubRepoBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C4A405631FFBFD3800BC54FC /* GithubRepoBrowserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepoBrowserTests.swift; sourceTree = "<group>"; };
 		C4A405651FFBFD3800BC54FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE226D502431C1D075C3F4B7 /* Pods-GithubRepoBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubRepoBrowser.release.xcconfig"; path = "Pods/Target Support Files/Pods-GithubRepoBrowser/Pods-GithubRepoBrowser.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +106,21 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		3C2ABE2020038EA3009F662F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3C2ABE2120038EB5009F662F /* GHReposityListServiceSpec.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3C773CB220036B18003021E7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C4754C811FFBFEE1002A1F61 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,20 +148,6 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		C4754C841FFBFF12002A1F61 /* Presenters */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenters;
-			sourceTree = "<group>";
-		};
-		C4754C851FFBFF1F002A1F61 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		C4754C861FFBFF26002A1F61 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,7 +160,7 @@
 		C4754C871FFBFF2B002A1F61 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				C4754C9D1FFC1B64002A1F61 /* GHReposityListService.swift */,
+				3C2ABE1C2003702D009F662F /* GHReposityListService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -250,8 +251,7 @@
 				C4754C881FFBFF32002A1F61 /* API */,
 				C4754C871FFBFF2B002A1F61 /* Services */,
 				C4754C861FFBFF26002A1F61 /* Models */,
-				C4754C851FFBFF1F002A1F61 /* Views */,
-				C4754C841FFBFF12002A1F61 /* Presenters */,
+				3C773CB220036B18003021E7 /* Views */,
 				C4754C831FFBFF08002A1F61 /* View Controllers */,
 				C4754C821FFBFEF8002A1F61 /* Storyboards */,
 				C4754C811FFBFEE1002A1F61 /* Supporting Files */,
@@ -263,8 +263,8 @@
 			isa = PBXGroup;
 			children = (
 				C4754C9A1FFC1B03002A1F61 /* JSON */,
+				3C2ABE2020038EA3009F662F /* Services */,
 				C4754C931FFC0F09002A1F61 /* API */,
-				C4A405631FFBFD3800BC54FC /* GithubRepoBrowserTests.swift */,
 				C4A405651FFBFD3800BC54FC /* Info.plist */,
 			);
 			path = GithubRepoBrowserTests;
@@ -491,7 +491,7 @@
 			files = (
 				C4754C8B1FFBFFB5002A1F61 /* Result.swift in Sources */,
 				C4754C8D1FFC01EA002A1F61 /* GHResponse.swift in Sources */,
-				C4754C9E1FFC1B64002A1F61 /* GHReposityListService.swift in Sources */,
+				3C2ABE1D2003702D009F662F /* GHReposityListService.swift in Sources */,
 				C4754CA01FFC1BF4002A1F61 /* Repository.swift in Sources */,
 				C4A405511FFBFD3800BC54FC /* ViewController.swift in Sources */,
 				C4754CA21FFC1C1B002A1F61 /* User.swift in Sources */,
@@ -506,8 +506,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4754C961FFC0F1F002A1F61 /* GHClientSpec.swift in Sources */,
+				3C2ABE2220038EB5009F662F /* GHReposityListServiceSpec.swift in Sources */,
 				C4754C991FFC1977002A1F61 /* GHRequestSpec.swift in Sources */,
-				C4A405641FFBFD3800BC54FC /* GithubRepoBrowserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

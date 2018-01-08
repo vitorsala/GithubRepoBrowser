@@ -15,12 +15,12 @@ import Nimble
 final class GHRequestSpec: QuickSpec {
     override func spec() {
         it("should be created correctly") {
-            let request: GHRequest = GHRequest(method: .get, service: .repositoryList, parameters: ["an" : "test"])
+            let request: GHRequest = GHRequest(method: .get, service: .repositoryList, parameters: GHParams(params: ["an" : "test"]))
             
             expect(request.method).to(equal(Method.get))
             expect(request.service).to(equal(Service.repositoryList))
             expect(request.parameters).toNot(beNil())
-            expect(request.parameters).to(haveCount(1))
+            expect(request.parameters?.params).to(haveCount(1))
         }
     }
 }

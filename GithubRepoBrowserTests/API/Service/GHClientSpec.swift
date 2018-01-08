@@ -26,11 +26,12 @@ final class GHClientSpec: QuickSpec {
         
         describe("Client") {
             it("Should be able to adquire an valid response") {
-                let request = GHRequest(method: .get, service: Service.repositoryList, parameters: [
+                let params = GHParams(params: [
                     "q" : "language:Swift",
                     "sort" : "stars",
                     "page" : 1
                     ])
+                let request = GHRequest(method: .get, service: Service.repositoryList, parameters: params)
                 
                 var response: GHResponse? = nil
                 

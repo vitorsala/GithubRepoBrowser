@@ -8,10 +8,44 @@
 
 import Foundation
 
-class GHReposityListService {
+final class GHReposityListService {
     private let client: GHClient
     
     init(client: GHClient = GHClientImpl()) {
         self.client = client
+    }
+    
+    private func buildRequest(language: String?, sort: String?, page: Int?) -> GHRequest {
+        
+        var params: GHParams = GHParams()
+        
+        if let language = language {
+            params.add(key: "q", value: "language:\(language)")
+        }
+        params.add(key: "sort", value: sort)
+        params.add(key: "page", value: page)
+        
+        return GHRequest(method: .get,
+                         service: Service.repositoryList,
+                         parameters: params)
+    }
+    
+    func fetchRepositories(language: String = "Swift", sort: String = "stars", page: Int, result: @escaping (Result<RepositoryList>) -> Void) {
+        
+        let request = self.buildRequest(language: language, sort: sort, page: page)
+        
+        self.client.fetch(request: request) { (response) in
+            if let error = response.error {
+                let res = Result<RepositoryList>.error(error)
+                result(res)
+            } else if let data = response.data {
+                if let repoList = try? JSONDecoder().decode(RepositoryList.self, from: data) {
+                    result(Result<RepositoryList>.success(repoList))
+                } else {
+                    let error = GHClientError.genericError(description: "Could not parse objects")
+                    result(Result<RepositoryList>.error(error))
+                }
+            }
+        }
     }
 }

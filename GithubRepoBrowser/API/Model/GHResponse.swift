@@ -10,6 +10,6 @@ import Foundation
 
 struct GHResponse {
     let code: Int
-    let data: Any?
+    let data: Data?
     let error: Error?
 }

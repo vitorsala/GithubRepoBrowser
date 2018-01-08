@@ -56,14 +56,14 @@ final class GHClientImpl: GHClient {
             self.sessionManager
                 .request(url,
                          method: self.method(for: request),
-                         parameters: request.parameters,
+                         parameters: request.parameters?.params,
                          encoding: URLEncoding.queryString,
                          headers: nil)
                 .validate()
-                .responseJSON { response in
+                .responseData(completionHandler: { (response) in
                     let resp = GHResponse(code: response.response?.statusCode ?? -1, data: response.result.value, error: response.error)
                     callback(resp)
-            }
+                })
         }
     }
 }

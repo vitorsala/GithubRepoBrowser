@@ -8,11 +8,18 @@
 
 import Foundation
 
+struct RepositoryList: Codable {
+    let total_count: Int
+    let incomplete_results: Bool
+    let items: [Repository]
+}
+
 struct Repository: Codable {
     let id: Int
     let name: String
     let description: String?
-    let stargazersCount: Int
-    let forksCount: Int
+    let url: String
+    let stargazers_count: Int
+    let forks_count: Int
     let owner: User
 }
