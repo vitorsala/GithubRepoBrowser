@@ -22,4 +22,5 @@ struct Repository: Codable {
     let stargazers_count: Int
     let forks_count: Int
     let owner: User
+    let license: License?
 }

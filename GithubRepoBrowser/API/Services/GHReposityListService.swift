@@ -26,7 +26,7 @@ final class GHReposityListService {
         params.add(key: "page", value: page)
         
         return GHRequest(method: .get,
-                         service: Service.repositoryList,
+                         service: GHService.repositoryList,
                          parameters: params)
     }
     
@@ -36,14 +36,14 @@ final class GHReposityListService {
         
         self.client.fetch(request: request) { (response) in
             if let error = response.error {
-                let res = Result<RepositoryList>.error(error)
+                let res = Result<RepositoryList>.error(response.code, error)
                 result(res)
             } else if let data = response.data {
-                if let repoList = try? JSONDecoder().decode(RepositoryList.self, from: data) {
+                do {
+                    let repoList = try JSONDecoder().decode(RepositoryList.self, from: data)
                     result(Result<RepositoryList>.success(repoList))
-                } else {
-                    let error = GHClientError.genericError(description: "Could not parse objects")
-                    result(Result<RepositoryList>.error(error))
+                } catch let error {
+                    result(Result<RepositoryList>.error(-1, error))
                 }
             }
         }

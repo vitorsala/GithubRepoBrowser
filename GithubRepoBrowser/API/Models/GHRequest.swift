@@ -13,11 +13,6 @@ enum Method {
     case post
 }
 
-enum Service: String {
-    case userSearch = "https://api.github.com/search/"
-    case repositoryList = "https://api.github.com/search/repositories"
-}
-
 struct GHParams {
     private(set) var params: [String: Any]
     
@@ -37,6 +32,6 @@ struct GHParams {
 
 struct GHRequest {
     let method: Method
-    let service: Service
+    let service: GHService
     let parameters: GHParams?
 }

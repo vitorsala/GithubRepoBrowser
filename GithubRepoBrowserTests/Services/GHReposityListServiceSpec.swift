@@ -15,15 +15,15 @@ import Nimble
 final class GHReposityListServiceSpec: QuickSpec {
     override func spec() {
         var service: GHReposityListService!
-        
+        var client: GHClientStub!
         beforeEach {
-            service = GHReposityListService()
+            client = GHClientStub()
+            service = GHReposityListService(client: client)
         }
-        
         afterEach {
             service = nil
+            client = nil
         }
-        
         context("Service") {
             describe("request") {
                 it("should bring an valid response") {
@@ -31,7 +31,29 @@ final class GHReposityListServiceSpec: QuickSpec {
                     service.fetchRepositories(page: 1, result: { (result) in
                         res = result
                     })
-                    expect(res).toEventuallyNot(beNil(), timeout: 5)
+                    expect(res).notTo(beNil())
+                    switch res! {
+                    case .success(let repoList):
+                        expect(repoList.items).toNot(haveCount(0))
+                    case let .error(_, error):
+                        fail("expected an .success, returned .error: \(error.localizedDescription)")
+                    }
+                }
+                
+                it("it should fail") {
+                    var res: Result<RepositoryList>! = nil
+                    client.shouldReturnSuccess = false
+                    service.fetchRepositories(page: 1, result: { (result) in
+                        res = result
+                    })
+                    expect(res).notTo(beNil())
+                    switch res! {
+                    case .success(_):
+                        fail("expected an error, returned an success instead")
+                    case let .error(code, error):
+                        expect(code).to(equal(404))
+                        expect(error as? GHClientError).to(equal(GHClientError.genericError(description: "Simulated Error")))
+                    }
                 }
             }
         }

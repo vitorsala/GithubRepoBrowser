@@ -18,7 +18,7 @@ final class GHRequestSpec: QuickSpec {
             let request: GHRequest = GHRequest(method: .get, service: .repositoryList, parameters: GHParams(params: ["an" : "test"]))
             
             expect(request.method).to(equal(Method.get))
-            expect(request.service).to(equal(Service.repositoryList))
+            expect(request.service).to(equal(GHService.repositoryList))
             expect(request.parameters).toNot(beNil())
             expect(request.parameters?.params).to(haveCount(1))
         }
