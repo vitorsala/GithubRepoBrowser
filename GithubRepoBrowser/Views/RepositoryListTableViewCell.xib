@@ -25,7 +25,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alamofire/Alamofire" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ouc-Dt-cCY">
-                        <rect key="frame" x="16" y="11" width="261" height="21"/>
+                        <rect key="frame" x="16" y="11" width="238" height="21"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <color key="textColor" red="0.14117647059999999" green="0.16048264500000001" blue="0.1813155115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -36,17 +36,17 @@
                         <color key="textColor" red="0.14117647059999999" green="0.16048264500000001" blue="0.1813155115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62E-v2-Ogs">
-                        <rect key="frame" x="309" y="10.5" width="44" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="654321" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62E-v2-Ogs">
+                        <rect key="frame" x="286" y="10.5" width="67" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="44" id="2aM-wg-pRn"/>
+                            <constraint firstAttribute="width" constant="67" id="2aM-wg-pRn"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cr-Lv-ngb">
-                        <rect key="frame" x="285" y="11" width="20" height="20"/>
+                        <rect key="frame" x="262" y="11" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="7Jj-OD-QqZ"/>
                             <constraint firstAttribute="width" constant="20" id="KBp-ma-dHV"/>
@@ -55,14 +55,14 @@
                         <color key="textColor" red="0.14117647059999999" green="0.16048264500000001" blue="0.1813155115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pu2-tj-9hc">
-                        <rect key="frame" x="309" y="35" width="44" height="27.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123456" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pu2-tj-9hc">
+                        <rect key="frame" x="286" y="35" width="67" height="27.5"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ttY-lJ-U2C">
-                        <rect key="frame" x="285" y="39" width="20" height="20"/>
+                        <rect key="frame" x="262" y="39" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="4B7-pi-uVf"/>
                             <constraint firstAttribute="height" constant="20" id="X1w-Eb-uVO"/>
@@ -99,6 +99,13 @@
                     <constraint firstItem="Ouc-Dt-cCY" firstAttribute="top" secondItem="noU-yi-xMF" secondAttribute="topMargin" id="scL-xR-zqm"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="lblCreationDate" destination="OKo-pE-4Bu" id="O6X-eJ-Iay"/>
+                <outlet property="lblDescription" destination="WEb-Uy-qOW" id="3hT-7J-ZCc"/>
+                <outlet property="lblForkCount" destination="62E-v2-Ogs" id="W0V-9a-igk"/>
+                <outlet property="lblRepoName" destination="Ouc-Dt-cCY" id="Fjg-2s-0Xt"/>
+                <outlet property="lblStarredCount" destination="pu2-tj-9hc" id="vip-Kg-6g9"/>
+            </connections>
             <point key="canvasLocation" x="117.5" y="65"/>
         </tableViewCell>
     </objects>

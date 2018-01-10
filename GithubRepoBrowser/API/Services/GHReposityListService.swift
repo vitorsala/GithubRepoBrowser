@@ -40,7 +40,9 @@ final class GHReposityListService {
                 result(res)
             } else if let data = response.data {
                 do {
-                    let repoList = try JSONDecoder().decode(RepositoryList.self, from: data)
+                    let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .iso8601
+                    let repoList = try decoder.decode(RepositoryList.self, from: data)
                     result(Result<RepositoryList>.success(repoList))
                 } catch let error {
                     result(Result<RepositoryList>.error(-1, error))

@@ -29,7 +29,7 @@
         <!--Repositories-->
         <scene sceneID="zmP-fC-MXo">
             <objects>
-                <viewController title="Repositories" automaticallyAdjustsScrollViewInsets="NO" id="Ljq-bJ-Kcx" sceneMemberID="viewController">
+                <viewController title="Repositories" automaticallyAdjustsScrollViewInsets="NO" id="Ljq-bJ-Kcx" customClass="RepositoryListViewController" customModule="GithubRepoBrowser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SES-0Z-fWY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,18 +38,28 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="V6W-Vz-aOD">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="41q-GS-fnU" firstAttribute="trailing" secondItem="chb-JV-aT1" secondAttribute="trailing" id="1jY-mX-BgF"/>
+                            <constraint firstItem="41q-GS-fnU" firstAttribute="bottom" secondItem="V6W-Vz-aOD" secondAttribute="bottom" id="4Z9-B3-3uW"/>
                             <constraint firstItem="41q-GS-fnU" firstAttribute="bottom" secondItem="chb-JV-aT1" secondAttribute="bottom" id="LfZ-NV-4XX"/>
                             <constraint firstItem="chb-JV-aT1" firstAttribute="top" secondItem="41q-GS-fnU" secondAttribute="top" id="VzT-ce-zQU"/>
+                            <constraint firstItem="V6W-Vz-aOD" firstAttribute="top" secondItem="41q-GS-fnU" secondAttribute="top" id="YEl-yJ-sz2"/>
                             <constraint firstItem="chb-JV-aT1" firstAttribute="leading" secondItem="41q-GS-fnU" secondAttribute="leading" id="dUr-Wx-azf"/>
+                            <constraint firstItem="V6W-Vz-aOD" firstAttribute="leading" secondItem="41q-GS-fnU" secondAttribute="leading" id="hRN-Vw-fPh"/>
+                            <constraint firstItem="V6W-Vz-aOD" firstAttribute="trailing" secondItem="41q-GS-fnU" secondAttribute="trailing" id="xiZ-jX-QAQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="41q-GS-fnU"/>
                     </view>
                     <navigationItem key="navigationItem" id="3iY-HL-ocD"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="V6W-Vz-aOD" id="fEN-6t-lG8"/>
+                        <outlet property="tableView" destination="chb-JV-aT1" id="oaW-hk-OEB"/>
                         <segue destination="aTp-CH-l2t" kind="show" identifier="" id="DcX-RT-Cr2"/>
                     </connections>
                 </viewController>

@@ -18,6 +18,7 @@ struct Repository: Codable {
     let id: Int
     let name: String
     let description: String?
+    let created_at: Date
     let url: String
     let stargazers_count: Int
     let forks_count: Int
