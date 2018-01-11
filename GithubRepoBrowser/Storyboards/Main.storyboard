@@ -58,8 +58,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="3iY-HL-ocD"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="V6W-Vz-aOD" id="fEN-6t-lG8"/>
-                        <outlet property="tableView" destination="chb-JV-aT1" id="oaW-hk-OEB"/>
                         <segue destination="aTp-CH-l2t" kind="show" identifier="" id="DcX-RT-Cr2"/>
                     </connections>
                 </viewController>
