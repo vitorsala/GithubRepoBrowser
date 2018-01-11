@@ -16,8 +16,8 @@ final class TableViewPresenterDelegateStub: TableViewPresenterDelegate {
     var hideStatusIndicatorTriggered = false
     var reloadTableViewDataTriggered = false
     
-    var presentTriggered = false
-    var viewToBePresented: UIViewController! = nil
+    var performSegueTriggered = false
+    var segueToBePerformed: SegueIdentifiers! = nil
     
     var showAlertTriggered = false
     var alertTitle: String! = nil
@@ -35,9 +35,9 @@ final class TableViewPresenterDelegateStub: TableViewPresenterDelegate {
         self.reloadTableViewDataTriggered = true
     }
     
-    func present(viewController: UIViewController) {
-        self.presentTriggered = true
-        self.viewToBePresented = viewController
+    func perform(segue: SegueIdentifiers) {
+        self.performSegueTriggered = true
+        self.segueToBePerformed = segue
     }
     
     func showAlert(title: String, message: String) {

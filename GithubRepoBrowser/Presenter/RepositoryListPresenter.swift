@@ -9,10 +9,23 @@
 import UIKit
 
 final class RepositoryListPresenter: NSObject {
+    private let noDataText = "Nenhum dado encontrado.  :("
+    private let noDataIcon = GHIcons.exclamationMark
+    
     private let repoListService: GHReposityListService
     private var repositoryList: RepositoryList
+    private var selectedIndexPath: IndexPath?
+    private var isFetchingData: Bool = false
     
     weak var delegate: TableViewPresenterDelegate?
+    
+    var selectedItem: Repository? {
+        guard let indexPath = self.selectedIndexPath else {
+            return nil
+        }
+        let item = self.repositoryList.items[indexPath.row]
+        return item
+    }
     
     init(repoListService: GHReposityListService = GHReposityListService()) {
         self.repoListService = repoListService
@@ -27,6 +40,7 @@ extension RepositoryListPresenter {
     
     private func fetchData() {
         self.delegate?.showStatusIndicator()
+        self.isFetchingData = true
         self.repoListService.fetchRepositories(language: "Swift", page: 1) { [weak self] (result) in
             
             switch result {
@@ -36,6 +50,7 @@ extension RepositoryListPresenter {
             case let .error(code, err):
                 self?.delegate?.showAlert(title: "Algo deu errado!", message: "Código (\(code)): \(err.localizedDescription)")
             }
+            self?.isFetchingData = false
             self?.delegate?.hideStatusIndicator()
         }
     }
@@ -70,7 +85,20 @@ extension RepositoryListPresenter: UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return (self.repositoryList.items.count > 0 ? 1 : 0)
+        if self.repositoryList.items.isEmpty {
+            tableView.separatorStyle = .none
+            
+            if !self.isFetchingData {
+                let view = NoDataView.loadFromNib()
+                tableView.backgroundView = view
+            }
+            
+            return 0
+        } else {
+            tableView.separatorStyle = .singleLine
+            tableView.backgroundView = nil
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -87,5 +115,9 @@ extension RepositoryListPresenter: UITableViewDataSource {
 }
 
 extension RepositoryListPresenter: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedIndexPath = indexPath
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.delegate?.perform(segue: SegueIdentifiers.showPRList)
+    }
 }

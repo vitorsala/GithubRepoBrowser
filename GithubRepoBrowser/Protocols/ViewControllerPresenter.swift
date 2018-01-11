@@ -15,6 +15,6 @@ protocol TableViewPresenterDelegate: ViewControllerPresenterDelegate {
 }
 
 protocol ViewControllerPresenterDelegate: class {
-    func present(viewController: UIViewController)
+    func perform(segue: SegueIdentifiers)
     func showAlert(title: String, message: String)
 }

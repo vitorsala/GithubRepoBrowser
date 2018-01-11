@@ -15,6 +15,15 @@ final class RepositoryListViewController: UIViewController {
     private let presenter: RepositoryListPresenter = RepositoryListPresenter()
     
     override func viewDidLoad() {
+        self.setup()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    }
+}
+
+extension RepositoryListViewController {
+    private func setup() {
         presenter.delegate = self
         if let tableView = self.tableView {
             presenter.setupTableView(tableView)
@@ -41,8 +50,8 @@ extension RepositoryListViewController: TableViewPresenterDelegate {
         self.tableView?.reloadData()
     }
     
-    func present(viewController: UIViewController) {
-        
+    func perform(segue: SegueIdentifiers) {
+        self.performSegue(withIdentifier: segue.rawValue, sender: self)
     }
     
     func showAlert(title: String, message: String) {

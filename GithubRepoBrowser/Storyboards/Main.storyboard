@@ -58,7 +58,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="3iY-HL-ocD"/>
                     <connections>
-                        <segue destination="aTp-CH-l2t" kind="show" identifier="" id="DcX-RT-Cr2"/>
+                        <outlet property="activityIndicator" destination="V6W-Vz-aOD" id="c5t-TN-fPT"/>
+                        <outlet property="tableView" destination="chb-JV-aT1" id="ngL-xz-UQW"/>
+                        <segue destination="aTp-CH-l2t" kind="show" identifier="showPRList" id="DcX-RT-Cr2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a49-3L-aHv" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -20,12 +20,24 @@
 		3C2ABE362004D701009F662F /* octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3C2ABE352004D6FB009F662F /* octicons.ttf */; };
 		3C2ABE3F200611DF009F662F /* NibReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE3E200611DF009F662F /* NibReusable.swift */; };
 		3C2ABE4320061379009F662F /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE4220061379009F662F /* UITableView+Reusable.swift */; };
-		3C2ABE452006161A009F662F /* DateFormatter+ptBRScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE442006161A009F662F /* DateFormatter+ptBRScheme.swift */; };
 		3C2ABE4720061872009F662F /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE4620061872009F662F /* Date+String.swift */; };
 		3C2ABE4B20061C42009F662F /* RepositoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE4A20061C42009F662F /* RepositoryListViewController.swift */; };
 		3C2ABE4E20061C5C009F662F /* RepositoryListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE4D20061C5C009F662F /* RepositoryListPresenter.swift */; };
 		3C2ABE5020061CEA009F662F /* ViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE4F20061CEA009F662F /* ViewControllerPresenter.swift */; };
 		3C2ABE5620062BE9009F662F /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE5520062BE9009F662F /* UIViewController+Alert.swift */; };
+		3C2ABE59200762A5009F662F /* SegueIndentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE58200762A5009F662F /* SegueIndentifiers.swift */; };
+		3C2ABE5C2007688E009F662F /* GHIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE5B2007688E009F662F /* GHIcons.swift */; };
+		3C2ABE6020076921009F662F /* UIFont+GHIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE5F20076921009F662F /* UIFont+GHIcons.swift */; };
+		3C2ABE62200769E9009F662F /* UILabel+GHIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE61200769E9009F662F /* UILabel+GHIcons.swift */; };
+		3C2ABE6420076B2D009F662F /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE6320076B2D009F662F /* NoDataView.swift */; };
+		3C2ABE6620076B33009F662F /* NoDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C2ABE6520076B33009F662F /* NoDataView.xib */; };
+		3C2ABE69200772A9009F662F /* UILabel+GHIconsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE68200772A9009F662F /* UILabel+GHIconsSpec.swift */; };
+		3C2ABE6B200773E3009F662F /* UIFont+GHIconsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE6A200773E3009F662F /* UIFont+GHIconsSpec.swift */; };
+		3C2ABE6D2007746D009F662F /* Date+StringSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE6C2007746D009F662F /* Date+StringSpec.swift */; };
+		3C2ABE6F200775D8009F662F /* UITableView+ReusableSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE6E200775D8009F662F /* UITableView+ReusableSpec.swift */; };
+		3C2ABE71200776BD009F662F /* TableViewCellStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE70200776BD009F662F /* TableViewCellStub.swift */; };
+		3C2ABE73200776C6009F662F /* TableViewCellStub.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C2ABE72200776C6009F662F /* TableViewCellStub.xib */; };
+		3C2ABE7620077BA9009F662F /* NibReusableSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE7520077BA9009F662F /* NibReusableSpec.swift */; };
 		5AEE1829A0F4C99B5D9F7660 /* Pods_GithubRepoBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8EFAE441103AD9AE26E71E2 /* Pods_GithubRepoBrowser.framework */; };
 		C4122CFF2006DFA2008E096D /* RepositoryListPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4122CFE2006DFA2008E096D /* RepositoryListPresenterSpec.swift */; };
 		C4122D012006E003008E096D /* TableViewPresenterDelegateStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4122D002006E003008E096D /* TableViewPresenterDelegateStub.swift */; };
@@ -67,12 +79,24 @@
 		3C2ABE352004D6FB009F662F /* octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = octicons.ttf; sourceTree = "<group>"; };
 		3C2ABE3E200611DF009F662F /* NibReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibReusable.swift; sourceTree = "<group>"; };
 		3C2ABE4220061379009F662F /* UITableView+Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
-		3C2ABE442006161A009F662F /* DateFormatter+ptBRScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+ptBRScheme.swift"; sourceTree = "<group>"; };
 		3C2ABE4620061872009F662F /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
 		3C2ABE4A20061C42009F662F /* RepositoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListViewController.swift; sourceTree = "<group>"; };
 		3C2ABE4D20061C5C009F662F /* RepositoryListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListPresenter.swift; sourceTree = "<group>"; };
 		3C2ABE4F20061CEA009F662F /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
 		3C2ABE5520062BE9009F662F /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		3C2ABE58200762A5009F662F /* SegueIndentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueIndentifiers.swift; sourceTree = "<group>"; };
+		3C2ABE5B2007688E009F662F /* GHIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHIcons.swift; sourceTree = "<group>"; };
+		3C2ABE5F20076921009F662F /* UIFont+GHIcons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+GHIcons.swift"; sourceTree = "<group>"; };
+		3C2ABE61200769E9009F662F /* UILabel+GHIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+GHIcons.swift"; sourceTree = "<group>"; };
+		3C2ABE6320076B2D009F662F /* NoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
+		3C2ABE6520076B33009F662F /* NoDataView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoDataView.xib; sourceTree = "<group>"; };
+		3C2ABE68200772A9009F662F /* UILabel+GHIconsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+GHIconsSpec.swift"; sourceTree = "<group>"; };
+		3C2ABE6A200773E3009F662F /* UIFont+GHIconsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+GHIconsSpec.swift"; sourceTree = "<group>"; };
+		3C2ABE6C2007746D009F662F /* Date+StringSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+StringSpec.swift"; sourceTree = "<group>"; };
+		3C2ABE6E200775D8009F662F /* UITableView+ReusableSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+ReusableSpec.swift"; sourceTree = "<group>"; };
+		3C2ABE70200776BD009F662F /* TableViewCellStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellStub.swift; sourceTree = "<group>"; };
+		3C2ABE72200776C6009F662F /* TableViewCellStub.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellStub.xib; sourceTree = "<group>"; };
+		3C2ABE7520077BA9009F662F /* NibReusableSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibReusableSpec.swift; sourceTree = "<group>"; };
 		5B030825F062B09874930B5F /* Pods-GithubRepoBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubRepoBrowser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GithubRepoBrowser/Pods-GithubRepoBrowser.debug.xcconfig"; sourceTree = "<group>"; };
 		6E0476368450C4A631D7B57F /* Pods-GithubRepoBrowserTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubRepoBrowserTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GithubRepoBrowserTests/Pods-GithubRepoBrowserTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B2DACD4291C1E1C1E1ADA491 /* Pods-GithubRepoBrowserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubRepoBrowserTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GithubRepoBrowserTests/Pods-GithubRepoBrowserTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -152,6 +176,8 @@
 			children = (
 				3C2ABE2A2004BB71009F662F /* GHClientStub.swift */,
 				C4122D002006E003008E096D /* TableViewPresenterDelegateStub.swift */,
+				3C2ABE70200776BD009F662F /* TableViewCellStub.swift */,
+				3C2ABE72200776C6009F662F /* TableViewCellStub.xib */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -161,6 +187,8 @@
 			children = (
 				3C2ABE312004D561009F662F /* RepositoryListTableViewCell.swift */,
 				3C2ABE332004D56A009F662F /* RepositoryListTableViewCell.xib */,
+				3C2ABE6320076B2D009F662F /* NoDataView.swift */,
+				3C2ABE6520076B33009F662F /* NoDataView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -170,8 +198,9 @@
 			children = (
 				3C2ABE5520062BE9009F662F /* UIViewController+Alert.swift */,
 				3C2ABE4220061379009F662F /* UITableView+Reusable.swift */,
-				3C2ABE442006161A009F662F /* DateFormatter+ptBRScheme.swift */,
 				3C2ABE4620061872009F662F /* Date+String.swift */,
+				3C2ABE5F20076921009F662F /* UIFont+GHIcons.swift */,
+				3C2ABE61200769E9009F662F /* UILabel+GHIcons.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -201,6 +230,34 @@
 				3C2ABE4D20061C5C009F662F /* RepositoryListPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3C2ABE572007627E009F662F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3C2ABE58200762A5009F662F /* SegueIndentifiers.swift */,
+				3C2ABE5B2007688E009F662F /* GHIcons.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		3C2ABE672007728A009F662F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3C2ABE68200772A9009F662F /* UILabel+GHIconsSpec.swift */,
+				3C2ABE6A200773E3009F662F /* UIFont+GHIconsSpec.swift */,
+				3C2ABE6C2007746D009F662F /* Date+StringSpec.swift */,
+				3C2ABE6E200775D8009F662F /* UITableView+ReusableSpec.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3C2ABE7420077B99009F662F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3C2ABE7520077BA9009F662F /* NibReusableSpec.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		C4122CFD2006DF06008E096D /* Presenter */ = {
@@ -339,6 +396,7 @@
 				3C2ABE302004D52D009F662F /* Views */,
 				3C2ABE4C20061C46009F662F /* Presenter */,
 				C4754C831FFBFF08002A1F61 /* View Controllers */,
+				3C2ABE572007627E009F662F /* Utils */,
 				C4754C821FFBFEF8002A1F61 /* Storyboards */,
 				C4754C811FFBFEE1002A1F61 /* Supporting Files */,
 				3C2ABE3820060EBD009F662F /* Resources */,
@@ -350,6 +408,8 @@
 			isa = PBXGroup;
 			children = (
 				3C2ABE292004BB62009F662F /* Stubs */,
+				3C2ABE672007728A009F662F /* Extensions */,
+				3C2ABE7420077B99009F662F /* Protocols */,
 				C4754C9A1FFC1B03002A1F61 /* JSON */,
 				C4122CFD2006DF06008E096D /* Presenter */,
 				C4754C931FFC0F09002A1F61 /* API */,
@@ -450,6 +510,7 @@
 				3C2ABE362004D701009F662F /* octicons.ttf in Resources */,
 				C4A405591FFBFD3800BC54FC /* LaunchScreen.storyboard in Resources */,
 				C4A405561FFBFD3800BC54FC /* Assets.xcassets in Resources */,
+				3C2ABE6620076B33009F662F /* NoDataView.xib in Resources */,
 				3C2ABE2F2004D171009F662F /* Main.storyboard in Resources */,
 				3C2ABE342004D56A009F662F /* RepositoryListTableViewCell.xib in Resources */,
 			);
@@ -460,6 +521,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4754C9C1FFC1B2E002A1F61 /* RepositoryList01.json in Resources */,
+				3C2ABE73200776C6009F662F /* TableViewCellStub.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,17 +647,21 @@
 				3C2ABE5020061CEA009F662F /* ViewControllerPresenter.swift in Sources */,
 				3C2ABE2D2004CD18009F662F /* GHClientError.swift in Sources */,
 				3C2ABE5620062BE9009F662F /* UIViewController+Alert.swift in Sources */,
-				3C2ABE452006161A009F662F /* DateFormatter+ptBRScheme.swift in Sources */,
+				3C2ABE5C2007688E009F662F /* GHIcons.swift in Sources */,
 				3C2ABE4E20061C5C009F662F /* RepositoryListPresenter.swift in Sources */,
 				3C2ABE1D2003702D009F662F /* GHReposityListService.swift in Sources */,
 				C4754CA01FFC1BF4002A1F61 /* Repository.swift in Sources */,
 				C4754CA21FFC1C1B002A1F61 /* User.swift in Sources */,
+				3C2ABE6020076921009F662F /* UIFont+GHIcons.swift in Sources */,
 				3C2ABE4720061872009F662F /* Date+String.swift in Sources */,
+				3C2ABE59200762A5009F662F /* SegueIndentifiers.swift in Sources */,
+				3C2ABE6420076B2D009F662F /* NoDataView.swift in Sources */,
 				C4754C901FFC028A002A1F61 /* GHClient.swift in Sources */,
 				3C2ABE3F200611DF009F662F /* NibReusable.swift in Sources */,
 				3C2ABE242004B70C009F662F /* GHService.swift in Sources */,
 				3C2ABE4320061379009F662F /* UITableView+Reusable.swift in Sources */,
 				C4754C921FFC0311002A1F61 /* GHRequest.swift in Sources */,
+				3C2ABE62200769E9009F662F /* UILabel+GHIcons.swift in Sources */,
 				3C2ABE262004B841009F662F /* License.swift in Sources */,
 				C4A4054F1FFBFD3800BC54FC /* AppDelegate.swift in Sources */,
 				3C2ABE322004D561009F662F /* RepositoryListTableViewCell.swift in Sources */,
@@ -607,11 +673,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4754C961FFC0F1F002A1F61 /* GHClientSpec.swift in Sources */,
+				3C2ABE6F200775D8009F662F /* UITableView+ReusableSpec.swift in Sources */,
+				3C2ABE6B200773E3009F662F /* UIFont+GHIconsSpec.swift in Sources */,
 				C4122D012006E003008E096D /* TableViewPresenterDelegateStub.swift in Sources */,
+				3C2ABE71200776BD009F662F /* TableViewCellStub.swift in Sources */,
+				3C2ABE69200772A9009F662F /* UILabel+GHIconsSpec.swift in Sources */,
 				3C2ABE2B2004BB71009F662F /* GHClientStub.swift in Sources */,
+				3C2ABE6D2007746D009F662F /* Date+StringSpec.swift in Sources */,
 				3C2ABE2220038EB5009F662F /* GHReposityListServiceSpec.swift in Sources */,
 				C4122CFF2006DFA2008E096D /* RepositoryListPresenterSpec.swift in Sources */,
 				C4754C991FFC1977002A1F61 /* GHRequestSpec.swift in Sources */,
+				3C2ABE7620077BA9009F662F /* NibReusableSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
