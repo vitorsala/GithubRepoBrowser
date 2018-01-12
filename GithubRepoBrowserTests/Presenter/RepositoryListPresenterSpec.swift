@@ -48,7 +48,7 @@ class RepositoryListPresenterSpec: QuickSpec {
                     expect(stub.showAlertTriggered).to(beTrue())
                     expect(stub.showStatusIndicatorTriggered).to(beTrue())
                     expect(stub.hideStatusIndicatorTriggered).to(beTrue())
-                    expect(stub.reloadTableViewDataTriggered).to(beFalse())
+                    expect(stub.reloadTableViewDataTriggered).to(beTrue())
                 }
             }
             context("Table View") {

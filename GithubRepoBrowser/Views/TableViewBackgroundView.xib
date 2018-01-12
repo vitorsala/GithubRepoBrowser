@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="octicons.ttf">
+            <string>octicons</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TableViewBackgroundView" customModule="GithubRepoBrowser" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="xqV-Rd-gcz">
+                    <rect key="frame" x="0.0" y="269" width="375" height="129"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4e-0x-HMp">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="a67-Ik-f9I"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="octicons" family="octicons" pointSize="50"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="asP-Rm-t9J">
+                            <rect key="frame" x="0.0" y="50" width="375" height="79"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An text to warning something dasdadasd sad asda dadas ad adasd asasd ad da daad ads" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0F-Ex-bkO">
+                                    <rect key="frame" x="16" y="0.0" width="343" height="79"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="d0F-Ex-bkO" firstAttribute="top" secondItem="asP-Rm-t9J" secondAttribute="top" id="ER3-uX-b3R"/>
+                                <constraint firstItem="d0F-Ex-bkO" firstAttribute="leading" secondItem="asP-Rm-t9J" secondAttribute="leading" constant="16" id="VCz-aq-45a"/>
+                                <constraint firstAttribute="trailing" secondItem="d0F-Ex-bkO" secondAttribute="trailing" constant="16" id="ppa-2I-SS9"/>
+                                <constraint firstAttribute="height" secondItem="d0F-Ex-bkO" secondAttribute="height" id="yk4-Qo-yBQ"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="z4e-0x-HMp" firstAttribute="centerX" secondItem="xqV-Rd-gcz" secondAttribute="centerX" id="8yK-RO-saU"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="xqV-Rd-gcz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="1vi-Ol-Uzb"/>
+                <constraint firstItem="xqV-Rd-gcz" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="K1e-jz-kYu"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="xqV-Rd-gcz" secondAttribute="trailing" id="W3g-kD-BPk"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="lblIcon" destination="z4e-0x-HMp" id="BHQ-o3-KmF"/>
+                <outlet property="lblText" destination="d0F-Ex-bkO" id="FAv-6I-2i5"/>
+            </connections>
+            <point key="canvasLocation" x="114.5" y="53.5"/>
+        </view>
+    </objects>
+</document>

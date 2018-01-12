@@ -9,13 +9,19 @@
 import UIKit
 
 final class RepositoryListPresenter: NSObject {
-    private let noDataText = "Nenhum dado encontrado.  :("
+    
     private let noDataIcon = GHIcons.exclamationMark
+    private let noDataText = "Nenhum dado encontrado.  :("
+    
+    private let failedDataFetchIcon = GHIcons.warningMark
+    private let failedDataFetchText = "Ocorreu um erro!\nPuxe a tela para baixo para atualizar."
     
     private let repoListService: GHReposityListService
     private var repositoryList: RepositoryList
     private var selectedIndexPath: IndexPath?
+    
     private var isFetchingData: Bool = false
+    private var didFailedDataFetch: Bool = false
     
     weak var delegate: TableViewPresenterDelegate?
     
@@ -41,16 +47,18 @@ extension RepositoryListPresenter {
     private func fetchData() {
         self.delegate?.showStatusIndicator()
         self.isFetchingData = true
+        self.didFailedDataFetch = false
         self.repoListService.fetchRepositories(language: "Swift", page: 1) { [weak self] (result) in
             
             switch result {
             case let .success(repoList):
                 self?.repositoryList = repoList
-                self?.delegate?.reloadTableViewData()
             case let .error(code, err):
                 self?.delegate?.showAlert(title: "Algo deu errado!", message: "Código (\(code)): \(err.localizedDescription)")
+                self?.didFailedDataFetch = true
             }
             self?.isFetchingData = false
+            self?.delegate?.reloadTableViewData()
             self?.delegate?.hideStatusIndicator()
         }
     }
@@ -64,6 +72,21 @@ extension RepositoryListPresenter: UITableViewDataSource {
     private func setupDelegate(for tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    private func backgroundView(for tableView: UITableView) {
+        if !self.isFetchingData {
+            var view: TableViewBackgroundView?
+            view = TableViewBackgroundView.loadFromNib()
+            
+            if self.didFailedDataFetch {
+                view?.set(icon: self.failedDataFetchIcon, text: self.failedDataFetchText)
+            } else {
+                view?.set(icon: self.noDataIcon, text: self.noDataText)
+            }
+            
+            tableView.backgroundView = view
+        }
     }
     
     private func setupDynamicRowSize(for tableView: UITableView) {
@@ -87,12 +110,7 @@ extension RepositoryListPresenter: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         if self.repositoryList.items.isEmpty {
             tableView.separatorStyle = .none
-            
-            if !self.isFetchingData {
-                let view = NoDataView.loadFromNib()
-                tableView.backgroundView = view
-            }
-            
+            self.backgroundView(for: tableView)
             return 0
         } else {
             tableView.separatorStyle = .singleLine

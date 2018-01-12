@@ -11,9 +11,3 @@ import Foundation
 enum SegueIdentifiers: String {
     case showPRList
 }
-
-extension SegueIdentifiers {
-    var string: String {
-        return self.rawValue
-    }
-}

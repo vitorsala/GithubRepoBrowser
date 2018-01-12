@@ -10,4 +10,5 @@ import Foundation
 
 enum GHIcons: String {
     case exclamationMark = ""
+    case warningMark = ""
 }

@@ -29,8 +29,6 @@
 		3C2ABE5C2007688E009F662F /* GHIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE5B2007688E009F662F /* GHIcons.swift */; };
 		3C2ABE6020076921009F662F /* UIFont+GHIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE5F20076921009F662F /* UIFont+GHIcons.swift */; };
 		3C2ABE62200769E9009F662F /* UILabel+GHIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE61200769E9009F662F /* UILabel+GHIcons.swift */; };
-		3C2ABE6420076B2D009F662F /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE6320076B2D009F662F /* NoDataView.swift */; };
-		3C2ABE6620076B33009F662F /* NoDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C2ABE6520076B33009F662F /* NoDataView.xib */; };
 		3C2ABE69200772A9009F662F /* UILabel+GHIconsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE68200772A9009F662F /* UILabel+GHIconsSpec.swift */; };
 		3C2ABE6B200773E3009F662F /* UIFont+GHIconsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE6A200773E3009F662F /* UIFont+GHIconsSpec.swift */; };
 		3C2ABE6D2007746D009F662F /* Date+StringSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE6C2007746D009F662F /* Date+StringSpec.swift */; };
@@ -38,6 +36,8 @@
 		3C2ABE71200776BD009F662F /* TableViewCellStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE70200776BD009F662F /* TableViewCellStub.swift */; };
 		3C2ABE73200776C6009F662F /* TableViewCellStub.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C2ABE72200776C6009F662F /* TableViewCellStub.xib */; };
 		3C2ABE7620077BA9009F662F /* NibReusableSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE7520077BA9009F662F /* NibReusableSpec.swift */; };
+		3C2ABE792008B53F009F662F /* TableViewBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE772008B53F009F662F /* TableViewBackgroundView.swift */; };
+		3C2ABE7A2008B53F009F662F /* TableViewBackgroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C2ABE782008B53F009F662F /* TableViewBackgroundView.xib */; };
 		5AEE1829A0F4C99B5D9F7660 /* Pods_GithubRepoBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8EFAE441103AD9AE26E71E2 /* Pods_GithubRepoBrowser.framework */; };
 		C4122CFF2006DFA2008E096D /* RepositoryListPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4122CFE2006DFA2008E096D /* RepositoryListPresenterSpec.swift */; };
 		C4122D012006E003008E096D /* TableViewPresenterDelegateStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4122D002006E003008E096D /* TableViewPresenterDelegateStub.swift */; };
@@ -88,8 +88,6 @@
 		3C2ABE5B2007688E009F662F /* GHIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHIcons.swift; sourceTree = "<group>"; };
 		3C2ABE5F20076921009F662F /* UIFont+GHIcons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+GHIcons.swift"; sourceTree = "<group>"; };
 		3C2ABE61200769E9009F662F /* UILabel+GHIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+GHIcons.swift"; sourceTree = "<group>"; };
-		3C2ABE6320076B2D009F662F /* NoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
-		3C2ABE6520076B33009F662F /* NoDataView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoDataView.xib; sourceTree = "<group>"; };
 		3C2ABE68200772A9009F662F /* UILabel+GHIconsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+GHIconsSpec.swift"; sourceTree = "<group>"; };
 		3C2ABE6A200773E3009F662F /* UIFont+GHIconsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+GHIconsSpec.swift"; sourceTree = "<group>"; };
 		3C2ABE6C2007746D009F662F /* Date+StringSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+StringSpec.swift"; sourceTree = "<group>"; };
@@ -97,6 +95,8 @@
 		3C2ABE70200776BD009F662F /* TableViewCellStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellStub.swift; sourceTree = "<group>"; };
 		3C2ABE72200776C6009F662F /* TableViewCellStub.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellStub.xib; sourceTree = "<group>"; };
 		3C2ABE7520077BA9009F662F /* NibReusableSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibReusableSpec.swift; sourceTree = "<group>"; };
+		3C2ABE772008B53F009F662F /* TableViewBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewBackgroundView.swift; sourceTree = "<group>"; };
+		3C2ABE782008B53F009F662F /* TableViewBackgroundView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewBackgroundView.xib; sourceTree = "<group>"; };
 		5B030825F062B09874930B5F /* Pods-GithubRepoBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubRepoBrowser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GithubRepoBrowser/Pods-GithubRepoBrowser.debug.xcconfig"; sourceTree = "<group>"; };
 		6E0476368450C4A631D7B57F /* Pods-GithubRepoBrowserTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubRepoBrowserTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GithubRepoBrowserTests/Pods-GithubRepoBrowserTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B2DACD4291C1E1C1E1ADA491 /* Pods-GithubRepoBrowserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubRepoBrowserTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GithubRepoBrowserTests/Pods-GithubRepoBrowserTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -185,10 +185,10 @@
 		3C2ABE302004D52D009F662F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3C2ABE772008B53F009F662F /* TableViewBackgroundView.swift */,
+				3C2ABE782008B53F009F662F /* TableViewBackgroundView.xib */,
 				3C2ABE312004D561009F662F /* RepositoryListTableViewCell.swift */,
 				3C2ABE332004D56A009F662F /* RepositoryListTableViewCell.xib */,
-				3C2ABE6320076B2D009F662F /* NoDataView.swift */,
-				3C2ABE6520076B33009F662F /* NoDataView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -507,10 +507,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C2ABE7A2008B53F009F662F /* TableViewBackgroundView.xib in Resources */,
 				3C2ABE362004D701009F662F /* octicons.ttf in Resources */,
 				C4A405591FFBFD3800BC54FC /* LaunchScreen.storyboard in Resources */,
 				C4A405561FFBFD3800BC54FC /* Assets.xcassets in Resources */,
-				3C2ABE6620076B33009F662F /* NoDataView.xib in Resources */,
 				3C2ABE2F2004D171009F662F /* Main.storyboard in Resources */,
 				3C2ABE342004D56A009F662F /* RepositoryListTableViewCell.xib in Resources */,
 			);
@@ -655,7 +655,7 @@
 				3C2ABE6020076921009F662F /* UIFont+GHIcons.swift in Sources */,
 				3C2ABE4720061872009F662F /* Date+String.swift in Sources */,
 				3C2ABE59200762A5009F662F /* SegueIndentifiers.swift in Sources */,
-				3C2ABE6420076B2D009F662F /* NoDataView.swift in Sources */,
+				3C2ABE792008B53F009F662F /* TableViewBackgroundView.swift in Sources */,
 				C4754C901FFC028A002A1F61 /* GHClient.swift in Sources */,
 				3C2ABE3F200611DF009F662F /* NibReusable.swift in Sources */,
 				3C2ABE242004B70C009F662F /* GHService.swift in Sources */,
