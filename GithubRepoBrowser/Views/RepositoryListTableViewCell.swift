@@ -10,7 +10,8 @@ import UIKit
 
 final class RepositoryListTableViewCell: UITableViewCell {
     @IBOutlet private weak var lblRepoName: UILabel?
-    @IBOutlet private weak var lblCreationDate: UILabel?
+    @IBOutlet private weak var lblUserName: UILabel?
+    @IBOutlet private weak var lblUpdatedDate: UILabel?
     @IBOutlet private weak var lblForkCount: UILabel?
     @IBOutlet private weak var lblStarredCount: UILabel?
     @IBOutlet private weak var lblDescription: UILabel?
@@ -18,8 +19,9 @@ final class RepositoryListTableViewCell: UITableViewCell {
 
 extension RepositoryListTableViewCell {
     func setup(using repo: Repository) {
-        self.lblRepoName?.text = "\(repo.owner.login)/\(repo.name)"
-        self.lblCreationDate?.text = repo.created_at.stringPTBR()
+        self.lblRepoName?.text = repo.name
+        self.lblUserName?.text = repo.owner.login
+        self.lblUpdatedDate?.text = repo.updated_at.stringPTBR()
         self.lblForkCount?.text = String(repo.forks_count)
         self.lblStarredCount?.text = String(repo.stargazers_count)
         self.lblDescription?.text = String(repo.description ?? "No description")

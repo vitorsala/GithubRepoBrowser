@@ -17,27 +17,21 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="98" id="wdm-en-rpL" customClass="RepositoryListTableViewCell" customModule="GithubRepoBrowser" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="319" height="98"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="118" id="wdm-en-rpL" customClass="RepositoryListTableViewCell" customModule="GithubRepoBrowser" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="319" height="120"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wdm-en-rpL" id="noU-yi-xMF">
-                <rect key="frame" x="0.0" y="0.0" width="319" height="97.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="285" height="119.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alamofire/Alamofire" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ouc-Dt-cCY">
-                        <rect key="frame" x="16" y="11" width="287" height="24"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alamofire" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ouc-Dt-cCY">
+                        <rect key="frame" x="16" y="11" width="261" height="24"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <color key="textColor" red="0.14117647059999999" green="0.16048264500000001" blue="0.1813155115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2014-07-31" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKo-pE-4Bu">
-                        <rect key="frame" x="16" y="41" width="76.5" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" red="0.14117647059999999" green="0.16048264500000001" blue="0.1813155115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="65432" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62E-v2-Ogs">
-                        <rect key="frame" x="179" y="41.5" width="45" height="17"/>
+                        <rect key="frame" x="32" y="93" width="45" height="17"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="45" id="DQ2-nY-log"/>
                         </constraints>
@@ -46,19 +40,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ttY-lJ-U2C">
-                        <rect key="frame" x="240" y="42" width="14" height="16"/>
+                        <rect key="frame" x="93" y="93" width="14" height="16"/>
                         <fontDescription key="fontDescription" name="octicons" family="octicons" pointSize="16"/>
                         <color key="textColor" red="0.14117647058823529" green="0.16048264503479004" blue="0.18131551146507263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Elegant HTTP Networking in Swift" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEb-Uy-qOW">
-                        <rect key="frame" x="16" y="66" width="287" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12345" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pu2-tj-9hc">
-                        <rect key="frame" x="258" y="41.5" width="45" height="17"/>
+                        <rect key="frame" x="111" y="93" width="45" height="17"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="45" id="JcF-lo-3lo"/>
                         </constraints>
@@ -67,40 +55,70 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cr-Lv-ngb">
-                        <rect key="frame" x="163" y="42" width="12" height="16"/>
+                        <rect key="frame" x="16" y="93" width="12" height="16"/>
                         <fontDescription key="fontDescription" name="octicons" family="octicons" pointSize="16"/>
                         <color key="textColor" red="0.14117647059999999" green="0.16048264500000001" blue="0.1813155115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alamofire" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XaK-xK-Ai6">
+                        <rect key="frame" x="16" y="35" width="71.5" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Elegant HTTP Networking in Swift" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEb-Uy-qOW">
+                        <rect key="frame" x="16" y="62.5" width="261" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2014-07-31" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKo-pE-4Bu">
+                        <rect key="frame" x="200.5" y="93" width="76.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.14117647059999999" green="0.16048264500000001" blue="0.1813155115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCE-xG-5gM">
+                        <rect key="frame" x="182.5" y="93.5" width="14" height="16"/>
+                        <fontDescription key="fontDescription" name="octicons" family="octicons" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="OKo-pE-4Bu" firstAttribute="leading" secondItem="noU-yi-xMF" secondAttribute="leadingMargin" id="0c3-po-t9j"/>
                     <constraint firstItem="Ouc-Dt-cCY" firstAttribute="top" secondItem="noU-yi-xMF" secondAttribute="topMargin" id="0vU-kl-V4e"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="WEb-Uy-qOW" secondAttribute="bottom" id="3i1-Oc-nsi"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="3cr-Lv-ngb" secondAttribute="bottom" id="1Nb-ii-ngN"/>
                     <constraint firstItem="62E-v2-Ogs" firstAttribute="centerY" secondItem="ttY-lJ-U2C" secondAttribute="centerY" id="60s-Jk-37M"/>
-                    <constraint firstItem="3cr-Lv-ngb" firstAttribute="centerY" secondItem="OKo-pE-4Bu" secondAttribute="centerY" id="6q0-Tx-IOB"/>
+                    <constraint firstItem="WEb-Uy-qOW" firstAttribute="top" secondItem="XaK-xK-Ai6" secondAttribute="bottom" constant="8" id="7jD-vt-1yn"/>
+                    <constraint firstItem="OKo-pE-4Bu" firstAttribute="leading" secondItem="mCE-xG-5gM" secondAttribute="trailing" constant="4" id="B8j-U8-U7o"/>
+                    <constraint firstItem="mCE-xG-5gM" firstAttribute="centerY" secondItem="OKo-pE-4Bu" secondAttribute="centerY" id="Drz-Ow-FTV"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="OKo-pE-4Bu" secondAttribute="trailing" id="Hhp-W9-DA9"/>
+                    <constraint firstItem="OKo-pE-4Bu" firstAttribute="trailing" secondItem="noU-yi-xMF" secondAttribute="trailingMargin" id="JxY-It-Dwp"/>
                     <constraint firstItem="Ouc-Dt-cCY" firstAttribute="leading" secondItem="noU-yi-xMF" secondAttribute="leadingMargin" id="KFB-uJ-L69"/>
+                    <constraint firstItem="3cr-Lv-ngb" firstAttribute="leading" secondItem="noU-yi-xMF" secondAttribute="leadingMargin" id="KwJ-CE-bCt"/>
                     <constraint firstItem="pu2-tj-9hc" firstAttribute="leading" secondItem="ttY-lJ-U2C" secondAttribute="trailing" constant="4" id="MNS-Xq-YgH"/>
                     <constraint firstItem="3cr-Lv-ngb" firstAttribute="centerY" secondItem="62E-v2-Ogs" secondAttribute="centerY" id="OBl-ul-Yn3"/>
-                    <constraint firstItem="WEb-Uy-qOW" firstAttribute="top" secondItem="OKo-pE-4Bu" secondAttribute="bottom" constant="8" id="YEI-PR-9f7"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="pu2-tj-9hc" secondAttribute="trailing" id="cQ3-um-noi"/>
-                    <constraint firstItem="OKo-pE-4Bu" firstAttribute="top" secondItem="Ouc-Dt-cCY" secondAttribute="bottom" constant="6" id="hGX-9q-IBo"/>
+                    <constraint firstItem="XaK-xK-Ai6" firstAttribute="leading" secondItem="noU-yi-xMF" secondAttribute="leadingMargin" id="guS-IJ-vic"/>
                     <constraint firstItem="Ouc-Dt-cCY" firstAttribute="trailing" secondItem="noU-yi-xMF" secondAttribute="trailingMargin" id="i0t-mK-BlY"/>
+                    <constraint firstItem="62E-v2-Ogs" firstAttribute="top" secondItem="WEb-Uy-qOW" secondAttribute="bottom" priority="250" constant="8" id="mBo-fj-Mfp"/>
+                    <constraint firstItem="ttY-lJ-U2C" firstAttribute="leading" secondItem="62E-v2-Ogs" secondAttribute="trailing" constant="16" id="qAN-6x-Ozi"/>
                     <constraint firstItem="62E-v2-Ogs" firstAttribute="leading" secondItem="3cr-Lv-ngb" secondAttribute="trailing" constant="4" id="qjE-h1-fi8"/>
-                    <constraint firstItem="ttY-lJ-U2C" firstAttribute="leading" secondItem="62E-v2-Ogs" secondAttribute="trailing" constant="16" id="waz-q3-FCd"/>
+                    <constraint firstItem="OKo-pE-4Bu" firstAttribute="centerY" secondItem="pu2-tj-9hc" secondAttribute="centerY" id="sge-76-s8O"/>
+                    <constraint firstItem="XaK-xK-Ai6" firstAttribute="top" secondItem="Ouc-Dt-cCY" secondAttribute="bottom" id="vWr-Tg-4Sf"/>
                     <constraint firstItem="ttY-lJ-U2C" firstAttribute="centerY" secondItem="pu2-tj-9hc" secondAttribute="centerY" id="wwy-6C-Yej"/>
                     <constraint firstAttribute="trailingMargin" secondItem="WEb-Uy-qOW" secondAttribute="trailing" id="x6P-XO-nfP"/>
                     <constraint firstItem="WEb-Uy-qOW" firstAttribute="leading" secondItem="noU-yi-xMF" secondAttribute="leadingMargin" id="xdY-xf-p3J"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="lblCreationDate" destination="OKo-pE-4Bu" id="O6X-eJ-Iay"/>
                 <outlet property="lblDescription" destination="WEb-Uy-qOW" id="3hT-7J-ZCc"/>
                 <outlet property="lblForkCount" destination="62E-v2-Ogs" id="W0V-9a-igk"/>
                 <outlet property="lblRepoName" destination="Ouc-Dt-cCY" id="Fjg-2s-0Xt"/>
                 <outlet property="lblStarredCount" destination="pu2-tj-9hc" id="vip-Kg-6g9"/>
+                <outlet property="lblUpdatedDate" destination="OKo-pE-4Bu" id="Ahj-QJ-IZb"/>
+                <outlet property="lblUserName" destination="XaK-xK-Ai6" id="H95-oa-9HX"/>
             </connections>
-            <point key="canvasLocation" x="89.5" y="63"/>
+            <point key="canvasLocation" x="58.5" y="64"/>
         </tableViewCell>
     </objects>
 </document>
