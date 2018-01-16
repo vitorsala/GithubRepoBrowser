@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct License: Codable {
+struct License: GHModel {
     let key: String
     let name: String
     let spdx_id: String?

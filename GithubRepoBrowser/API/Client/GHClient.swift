@@ -28,10 +28,17 @@ final class GHClientImpl: GHClient {
     }
     
     func fetch(request: GHRequest, callback: @escaping (GHResponse) -> Void) {
-        guard let url = URL(string: request.service.rawValue) else {
-            callback(GHResponse(code: -1, data: nil, error: GHClientError.invalidUrl(description: "\(request.service.rawValue) is not an valid url")))
+        guard let url = request.service.url() else {
+            callback(GHResponse(code: -1, data: nil, error: GHClientError.invalidUrl(description: "\(request.service.string()) is not an valid url")))
             return
         }
+        
+        #if DEBUG
+        print("fetching", request.service.string())
+        if let params = request.parameters {
+            print("with parameters", params.params)
+        }
+        #endif
         
         self.sessionManager
             .request(url,

@@ -17,8 +17,10 @@ final class GHClientStub: GHClient {
     
     private func fileName(for service: GHService) -> String? {
         switch service {
-        case .repositoryList:
+        case GHServiceEndpoint.Search.repositories:
             return "RepositoryList01"
+        case GHServiceEndpoint.Repository.pullRequest(_,_):
+            return "RepositoryPRList"
         default:
             return nil
         }

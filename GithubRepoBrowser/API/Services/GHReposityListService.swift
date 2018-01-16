@@ -26,7 +26,7 @@ final class GHReposityListService {
         params.add(key: "page", value: page)
         
         return GHRequest(method: .get,
-                         service: GHService.repositoryList,
+                         service: GHServiceEndpoint.Search.repositories,
                          parameters: params)
     }
     

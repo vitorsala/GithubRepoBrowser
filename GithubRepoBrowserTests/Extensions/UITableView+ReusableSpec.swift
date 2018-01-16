@@ -6,7 +6,7 @@
 //  Copyright © 2018 Vitor Kawai Sala. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Quick
 import Nimble
 
@@ -24,7 +24,7 @@ final class UITableViewReusableSpec: QuickSpec {
             tableView = nil
         }
         
-        context("table view") {
+        describe("table view") {
             describe("cell register") {
                 it("should allow through cell type") {
                     tableView.register(TableViewCellStub.self)
@@ -32,6 +32,7 @@ final class UITableViewReusableSpec: QuickSpec {
                     expect(cell).notTo(beNil())
                 }
             }
+            
             describe("cell dequeue") {
                 it("should dequeue correct cell") {
                     tableView.register(TableViewCellStub.self)

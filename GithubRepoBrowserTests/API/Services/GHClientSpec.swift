@@ -13,7 +13,7 @@ import Nimble
 @testable import GithubRepoBrowser
 
 final class GHClientSpec: QuickSpec {
-    override func spec() {
+//    override func spec() {
 //        var client: GHClient!
 //        
 //        beforeEach {
@@ -26,7 +26,7 @@ final class GHClientSpec: QuickSpec {
 //        
 //        describe("Client") {
 //            it("Should be able to adquire an valid response") {
-//                let request = GHRequest(method: .get, service: Service.root, parameters: nil)
+//                let request = GHRequest(method: .get, service: GHServiceEndpoint.root, parameters: nil)
 //                
 //                var response: GHResponse? = nil
 //                
@@ -39,5 +39,5 @@ final class GHClientSpec: QuickSpec {
 //                expect(response?.code).toEventually(equal(200))
 //            }
 //        }
-    }
+//    }
 }

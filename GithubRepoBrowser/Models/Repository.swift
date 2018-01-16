@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct RepositoryList: Codable {
+struct RepositoryList: GHModel {
     let total_count: Int
     let incomplete_results: Bool
     let items: [Repository]
 }
 
-struct Repository: Codable {
+struct Repository: GHModel {
     let id: Int
     let name: String
     let description: String?
