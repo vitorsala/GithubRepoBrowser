@@ -50,6 +50,10 @@ extension RepositoryListViewController: TableViewPresenterDelegate {
         self.tableView?.reloadData()
     }
     
+    func scrollToRow(at indexPath: IndexPath, at position: UITableViewScrollPosition) {
+        self.tableView?.scrollToRow(at: indexPath, at: position, animated: true)
+    }
+    
     func perform(segue: SegueIdentifiers) {
         self.performSegue(withIdentifier: segue.rawValue, sender: self)
     }

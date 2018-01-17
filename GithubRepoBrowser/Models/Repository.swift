@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Root model to decode API Response
 struct RepositoryList: GHModel {
     let total_count: Int
     let incomplete_results: Bool

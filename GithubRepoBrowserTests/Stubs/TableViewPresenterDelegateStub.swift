@@ -11,10 +11,10 @@ import UIKit
 @testable import GithubRepoBrowser
 
 final class TableViewPresenterDelegateStub: TableViewPresenterDelegate {
-    
     var showStatusIndicatorTriggered = false
     var hideStatusIndicatorTriggered = false
     var reloadTableViewDataTriggered = false
+    var scrollToRowTriggered = false
     
     var performSegueTriggered = false
     var segueToBePerformed: SegueIdentifiers! = nil
@@ -35,6 +35,10 @@ final class TableViewPresenterDelegateStub: TableViewPresenterDelegate {
         self.reloadTableViewDataTriggered = true
     }
     
+    func scrollToRow(at indexPath: IndexPath, at position: UITableViewScrollPosition) {
+        self.scrollToRowTriggered = true
+    }
+    
     func perform(segue: SegueIdentifiers) {
         self.performSegueTriggered = true
         self.segueToBePerformed = segue
@@ -45,4 +49,5 @@ final class TableViewPresenterDelegateStub: TableViewPresenterDelegate {
         self.alertTitle = title
         self.alertMessage = message
     }
+    
 }

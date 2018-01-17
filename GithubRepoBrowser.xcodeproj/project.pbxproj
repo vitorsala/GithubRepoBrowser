@@ -46,6 +46,8 @@
 		3C2ABE8B200CB967009F662F /* RepositoryPRList.json in Resources */ = {isa = PBXBuildFile; fileRef = 3C2ABE8A200CB967009F662F /* RepositoryPRList.json */; };
 		3C33CA28200F4E62004C31EA /* GHParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C33CA27200F4E62004C31EA /* GHParams.swift */; };
 		3C33CA2A200F4E7C004C31EA /* GHParamsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C33CA29200F4E7C004C31EA /* GHParamsSpec.swift */; };
+		3C33CA2C200F54D9004C31EA /* LoadingViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C33CA2B200F54D9004C31EA /* LoadingViewCell.swift */; };
+		3C33CA2E200F54F0004C31EA /* LoadingViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C33CA2D200F54F0004C31EA /* LoadingViewCell.xib */; };
 		3C90F853200F47C0001EB386 /* GHServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C90F852200F47C0001EB386 /* GHServiceSpec.swift */; };
 		3C90F855200F4C53001EB386 /* GHClientErrorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C90F854200F4C53001EB386 /* GHClientErrorSpec.swift */; };
 		3C9C624D200E03A000F14604 /* GHPullRequestListServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C624C200E03A000F14604 /* GHPullRequestListServiceSpec.swift */; };
@@ -116,6 +118,8 @@
 		3C2ABE8A200CB967009F662F /* RepositoryPRList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RepositoryPRList.json; sourceTree = "<group>"; };
 		3C33CA27200F4E62004C31EA /* GHParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHParams.swift; sourceTree = "<group>"; };
 		3C33CA29200F4E7C004C31EA /* GHParamsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHParamsSpec.swift; sourceTree = "<group>"; };
+		3C33CA2B200F54D9004C31EA /* LoadingViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewCell.swift; sourceTree = "<group>"; };
+		3C33CA2D200F54F0004C31EA /* LoadingViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingViewCell.xib; sourceTree = "<group>"; };
 		3C90F852200F47C0001EB386 /* GHServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHServiceSpec.swift; sourceTree = "<group>"; };
 		3C90F854200F4C53001EB386 /* GHClientErrorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHClientErrorSpec.swift; sourceTree = "<group>"; };
 		3C9C624C200E03A000F14604 /* GHPullRequestListServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHPullRequestListServiceSpec.swift; sourceTree = "<group>"; };
@@ -212,6 +216,8 @@
 				3C2ABE782008B53F009F662F /* TableViewBackgroundView.xib */,
 				3C2ABE312004D561009F662F /* RepositoryListTableViewCell.swift */,
 				3C2ABE332004D56A009F662F /* RepositoryListTableViewCell.xib */,
+				3C33CA2B200F54D9004C31EA /* LoadingViewCell.swift */,
+				3C33CA2D200F54F0004C31EA /* LoadingViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -545,6 +551,7 @@
 				C4A405591FFBFD3800BC54FC /* LaunchScreen.storyboard in Resources */,
 				C4A405561FFBFD3800BC54FC /* Assets.xcassets in Resources */,
 				3C2ABE2F2004D171009F662F /* Main.storyboard in Resources */,
+				3C33CA2E200F54F0004C31EA /* LoadingViewCell.xib in Resources */,
 				3C2ABE342004D56A009F662F /* RepositoryListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -690,6 +697,7 @@
 				3C2ABE6020076921009F662F /* UIFont+GHIcons.swift in Sources */,
 				3C2ABE83200CADD4009F662F /* Reusable.swift in Sources */,
 				3C2ABE4720061872009F662F /* Date+String.swift in Sources */,
+				3C33CA2C200F54D9004C31EA /* LoadingViewCell.swift in Sources */,
 				3C2ABE59200762A5009F662F /* SegueIndentifiers.swift in Sources */,
 				3C2ABE7F200CABC5009F662F /* GHModel.swift in Sources */,
 				3C2ABE792008B53F009F662F /* TableViewBackgroundView.swift in Sources */,

@@ -12,6 +12,7 @@ protocol TableViewPresenterDelegate: ViewControllerPresenterDelegate {
     func showStatusIndicator()
     func hideStatusIndicator()
     func reloadTableViewData()
+    func scrollToRow(at indexPath: IndexPath, at position: UITableViewScrollPosition)
 }
 
 protocol ViewControllerPresenterDelegate: class {

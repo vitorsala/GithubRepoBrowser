@@ -17,8 +17,10 @@ final class RepositoryListPresenter: NSObject {
     private let failedDataFetchText = "Ocorreu um erro!\nPuxe a tela para baixo para atualizar."
     
     private let repoListService: GHReposityListService
-    private var repositoryList: RepositoryList
+    private var repositoryList: [Repository] = []
     private var selectedIndexPath: IndexPath?
+    
+    private var page: Int = 1
     
     private var isFetchingData: Bool = false
     private var didFailedDataFetch: Bool = false
@@ -29,37 +31,52 @@ final class RepositoryListPresenter: NSObject {
         guard let indexPath = self.selectedIndexPath else {
             return nil
         }
-        let item = self.repositoryList.items[indexPath.row]
+        let item = self.repositoryList[indexPath.row]
         return item
     }
     
     init(repoListService: GHReposityListService = GHReposityListService()) {
         self.repoListService = repoListService
-        self.repositoryList = RepositoryList(total_count: 0, incomplete_results: false, items: [])
     }
 }
 
 extension RepositoryListPresenter {
     @objc func setup() {
-        self.fetchData()
+        self.delegate?.showStatusIndicator()
+        self.loadPage(self.page) { [weak self] in
+            self?.delegate?.hideStatusIndicator()
+        }
     }
     
-    private func fetchData() {
-        self.delegate?.showStatusIndicator()
+    private func loadPage(_ page: Int, completion: (() -> Void)? = nil) {
         self.isFetchingData = true
         self.didFailedDataFetch = false
-        self.repoListService.fetchRepositories(language: "Swift", page: 1) { [weak self] (result) in
+        self.repoListService.fetchRepositories(language: "Swift", page: page) { [weak self] (result) in
             
             switch result {
             case let .success(repoList):
-                self?.repositoryList = repoList
+                self?.repositoryList.append(contentsOf: repoList.items)
             case let .error(code, err):
                 self?.delegate?.showAlert(title: "Algo deu errado!", message: "Código (\(code)): \(err.localizedDescription)")
                 self?.didFailedDataFetch = true
             }
             self?.isFetchingData = false
             self?.delegate?.reloadTableViewData()
-            self?.delegate?.hideStatusIndicator()
+            completion?()
+        }
+    }
+    
+    private func loadNextPage() {
+        if !self.didFailedDataFetch {
+            self.page += 1
+        }
+        
+        self.loadPage(self.page) { [weak self] in
+            guard let `self` = self else { return }
+            if self.didFailedDataFetch {
+                let indexPath = IndexPath(item: self.repositoryList.count - 1, section: 0)
+                self.delegate?.scrollToRow(at: indexPath, at: .bottom)
+            }
         }
     }
 }
@@ -67,6 +84,7 @@ extension RepositoryListPresenter {
 extension RepositoryListPresenter {
     private func registerCells(for tableView: UITableView) {
         tableView.register(RepositoryListTableViewCell.self)
+        tableView.register(LoadingViewCell.self)
     }
     
     private func setupDelegate(for tableView: UITableView) {
@@ -110,7 +128,7 @@ extension RepositoryListPresenter {
 
 extension RepositoryListPresenter: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        if self.repositoryList.items.isEmpty {
+        if self.repositoryList.isEmpty {
             tableView.separatorStyle = .none
             self.backgroundView(for: tableView)
             return 0
@@ -122,15 +140,18 @@ extension RepositoryListPresenter: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.repositoryList.items.count
+        return self.repositoryList.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(RepositoryListTableViewCell.self)
-        cell.setup(using: self.repositoryList.items[indexPath.row])
-        
-        return cell
+        if indexPath.row >= self.repositoryList.count {
+            let cell = tableView.dequeueReusableCell(LoadingViewCell.self)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(RepositoryListTableViewCell.self)
+            cell.setup(using: self.repositoryList[indexPath.row])
+            return cell
+        }
     }
 }
 
@@ -139,5 +160,11 @@ extension RepositoryListPresenter: UITableViewDelegate {
         self.selectedIndexPath = indexPath
         tableView.deselectRow(at: indexPath, animated: true)
         self.delegate?.perform(segue: SegueIdentifiers.showPRList)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row >= self.repositoryList.count {
+            self.loadNextPage()
+        }
     }
 }

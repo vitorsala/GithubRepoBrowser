@@ -32,8 +32,12 @@ class RepositoryListPresenterSpec: QuickSpec {
             client = nil
         }
         
-        context("Presenter") {
-            describe("Core") {
+        describe("Presenter") {
+            context("Core") {
+                it("selectedItem should return nil when no selection were made") {
+                    expect(presenter.selectedItem).to(beNil())
+                }
+                
                 it("Should fetch data and call delegate") {
                     presenter.setup()
                     expect(stub.showAlertTriggered).to(beFalse())
@@ -42,7 +46,7 @@ class RepositoryListPresenterSpec: QuickSpec {
                     expect(stub.reloadTableViewDataTriggered).to(beTrue())
                 }
                 
-                it("Should call an alert with error") {
+                it("Should call an alert with error if fetch fails") {
                     client.shouldReturnSuccess = false
                     presenter.setup()
                     expect(stub.showAlertTriggered).to(beTrue())
@@ -51,6 +55,7 @@ class RepositoryListPresenterSpec: QuickSpec {
                     expect(stub.reloadTableViewDataTriggered).to(beTrue())
                 }
             }
+            
             context("Table View") {
                 var tableView: UITableView!
                 
@@ -73,10 +78,53 @@ class RepositoryListPresenterSpec: QuickSpec {
                 }
                 
                 describe("UITableViewDataSource") {
+                    it("Should return correct cell when IndexPath do not point to last element") {
+                        presenter.setup()
+                        let cell = presenter.tableView(tableView, cellForRowAt: IndexPath(item: 0, section: 0))
+                        expect(cell).to(beAnInstanceOf(RepositoryListTableViewCell.self))
+                    }
+                    
+                    it("Should return loading cell when tableview is at over last element") {
+                        presenter.setup()
+                        let cell = presenter.tableView(tableView, cellForRowAt: IndexPath(item: 31, section: 0))
+                        expect(cell).to(beAnInstanceOf(LoadingViewCell.self))
+                    }
+                    
+                    it("Should return correct number of elements (num of repositories + 1)") {
+                        presenter.setup()
+                        let count = presenter.tableView(tableView, numberOfRowsInSection: 0)
+                        expect(count).to(equal(31))
+                    }
+                    
+                    it("Should create an background view when table view have no elements") {
+                        let sectionCount = presenter.numberOfSections(in: tableView)
+                        expect(sectionCount).to(equal(0))
+                        expect(tableView.backgroundView).toNot(beNil())
+                    }
+                    
+                    it("Should have no background view when table view have at least 1 element") {
+                        presenter.setup()
+                        let sectionCount = presenter.numberOfSections(in: tableView)
+                        expect(sectionCount).to(equal(1))
+                        expect(tableView.backgroundView).to(beNil())
+                    }
                 }
                 
                 describe("UITableViewDelegate") {
+                    beforeEach {
+                        presenter.setup()
+                    }
                     
+                    it("didSelectRow should select an valid repository") {
+                        presenter.tableView(tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
+                        expect(presenter.selectedItem).toNot(beNil())
+                    }
+                    
+                    it("willDisplay should trigger an new fetch if user is in last row") {
+                        presenter.tableView(tableView, willDisplay: UITableViewCell(), forRowAt: IndexPath(row: 31, section: 0))
+                        let count = presenter.tableView(tableView, numberOfRowsInSection: 0)
+                        expect(count).to(equal(61))
+                    }
                 }
             }
         }
