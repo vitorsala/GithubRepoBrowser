@@ -48,7 +48,7 @@ final class GHClientStub: GHClient {
         }
         
         guard let fileName = self.fileName(for: request.service) else {
-            let error = GHClientError.invalidUrl(description: "No local file for provided service")
+            let error = GHClientError.genericError(description: "No local file for provided service")
             let response = GHResponse(code: -1, data: nil, error: error)
             callback(response)
             return

@@ -9,19 +9,14 @@
 import Foundation
 
 enum GHClientError: Error {
-    case invalidUrl(description: String)
     case genericError(description: String)
 }
 
 extension GHClientError: Equatable {
     static func ==(lhs: GHClientError, rhs: GHClientError) -> Bool {
         switch (lhs, rhs) {
-        case (let .invalidUrl(lDescription), let .invalidUrl(rDescription)):
-            return lDescription == rDescription
         case (let .genericError(lDescription), let .genericError(rDescription)):
             return lDescription == rDescription
-        default:
-            return false
         }
     }
 }

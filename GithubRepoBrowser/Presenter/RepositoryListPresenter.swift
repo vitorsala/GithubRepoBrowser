@@ -64,7 +64,7 @@ extension RepositoryListPresenter {
     }
 }
 
-extension RepositoryListPresenter: UITableViewDataSource {
+extension RepositoryListPresenter {
     private func registerCells(for tableView: UITableView) {
         tableView.register(RepositoryListTableViewCell.self)
     }
@@ -106,7 +106,9 @@ extension RepositoryListPresenter: UITableViewDataSource {
         self.setupDynamicRowSize(for: tableView)
         self.setupRefreshControl(for: tableView)
     }
-    
+}
+
+extension RepositoryListPresenter: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         if self.repositoryList.items.isEmpty {
             tableView.separatorStyle = .none

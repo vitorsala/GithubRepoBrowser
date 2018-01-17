@@ -9,13 +9,16 @@
 import Foundation
 
 protocol GHService {
-    func url() -> URL?
-    func string() -> String
+    var url: URL { get }
+    var string: String { get }
 }
 
 extension GHService {
-    func url() -> URL? {
-        return URL(string: self.string())
+    var url: URL {
+        guard let url = URL(string: self.string) else {
+            fatalError("Invalid URL String \(self.string)")
+        }
+        return url
     }
 }
 
@@ -33,7 +36,7 @@ enum GHServiceEndpoint {
 }
 
 extension GHServiceEndpoint: GHService {
-    func string() -> String {
+    var string: String {
         switch self {
         case .root :
             return "https://api.github.com"
@@ -42,25 +45,21 @@ extension GHServiceEndpoint: GHService {
 }
 
 extension GHServiceEndpoint.Search: GHService {
-    func string() -> String {
+    var string: String {
         switch self {
         case .repositories:
-            return "\(GHServiceEndpoint.root.string())/search/repositories"
+            return "\(GHServiceEndpoint.root.string)/search/repositories"
         }
     }
 }
 
 extension GHServiceEndpoint.Repository: GHService {
-    private func common(login: String, name: String) -> String {
-        return "\(GHServiceEndpoint.root.string())/repos/\(login)/\(name)"
-    }
-    
-    func string() -> String {
+    var string: String {
         switch self {
         case let .info(login, name):
-            return "\(GHServiceEndpoint.root.string())/repos/\(login)/\(name)"
+            return "\(GHServiceEndpoint.root.string)/repos/\(login)/\(name)"
         case let .pullRequest(login, name):
-            return "\(GHServiceEndpoint.Repository.info(login: login, name: name).string())/pulls"
+            return "\(GHServiceEndpoint.Repository.info(login: login, name: name).string)/pulls"
         }
     }
 }

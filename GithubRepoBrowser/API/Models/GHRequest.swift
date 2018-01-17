@@ -13,23 +13,6 @@ enum Method {
     case post
 }
 
-struct GHParams {
-    private(set) var params: [String: Any]
-    
-    init(params: [String: Any] = [:]) {
-        self.params = params
-    }
-    
-    mutating func add(key: String, value: Any?) {
-        guard let value = value else { return }
-        params[key] = value
-    }
-    
-    mutating func add(_ dict: [String: Any]) {
-        params.merge(dict) { (_, new) -> Any in new }
-    }
-}
-
 struct GHRequest {
     let method: Method
     let service: GHService

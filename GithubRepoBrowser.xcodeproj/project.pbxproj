@@ -44,6 +44,10 @@
 		3C2ABE87200CAE27009F662F /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE86200CAE27009F662F /* NibLoadable.swift */; };
 		3C2ABE89200CAF8D009F662F /* GHPullRequestListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE88200CAF8D009F662F /* GHPullRequestListService.swift */; };
 		3C2ABE8B200CB967009F662F /* RepositoryPRList.json in Resources */ = {isa = PBXBuildFile; fileRef = 3C2ABE8A200CB967009F662F /* RepositoryPRList.json */; };
+		3C33CA28200F4E62004C31EA /* GHParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C33CA27200F4E62004C31EA /* GHParams.swift */; };
+		3C33CA2A200F4E7C004C31EA /* GHParamsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C33CA29200F4E7C004C31EA /* GHParamsSpec.swift */; };
+		3C90F853200F47C0001EB386 /* GHServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C90F852200F47C0001EB386 /* GHServiceSpec.swift */; };
+		3C90F855200F4C53001EB386 /* GHClientErrorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C90F854200F4C53001EB386 /* GHClientErrorSpec.swift */; };
 		3C9C624D200E03A000F14604 /* GHPullRequestListServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C624C200E03A000F14604 /* GHPullRequestListServiceSpec.swift */; };
 		5AEE1829A0F4C99B5D9F7660 /* Pods_GithubRepoBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8EFAE441103AD9AE26E71E2 /* Pods_GithubRepoBrowser.framework */; };
 		C4122CFF2006DFA2008E096D /* RepositoryListPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4122CFE2006DFA2008E096D /* RepositoryListPresenterSpec.swift */; };
@@ -110,6 +114,10 @@
 		3C2ABE86200CAE27009F662F /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		3C2ABE88200CAF8D009F662F /* GHPullRequestListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHPullRequestListService.swift; sourceTree = "<group>"; };
 		3C2ABE8A200CB967009F662F /* RepositoryPRList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RepositoryPRList.json; sourceTree = "<group>"; };
+		3C33CA27200F4E62004C31EA /* GHParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHParams.swift; sourceTree = "<group>"; };
+		3C33CA29200F4E7C004C31EA /* GHParamsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHParamsSpec.swift; sourceTree = "<group>"; };
+		3C90F852200F47C0001EB386 /* GHServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHServiceSpec.swift; sourceTree = "<group>"; };
+		3C90F854200F4C53001EB386 /* GHClientErrorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHClientErrorSpec.swift; sourceTree = "<group>"; };
 		3C9C624C200E03A000F14604 /* GHPullRequestListServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHPullRequestListServiceSpec.swift; sourceTree = "<group>"; };
 		5B030825F062B09874930B5F /* Pods-GithubRepoBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubRepoBrowser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GithubRepoBrowser/Pods-GithubRepoBrowser.debug.xcconfig"; sourceTree = "<group>"; };
 		6E0476368450C4A631D7B57F /* Pods-GithubRepoBrowserTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubRepoBrowserTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GithubRepoBrowserTests/Pods-GithubRepoBrowserTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -349,6 +357,7 @@
 				3C2ABE2C2004CD18009F662F /* GHClientError.swift */,
 				C4754C8A1FFBFFB5002A1F61 /* Result.swift */,
 				3C2ABE232004B70C009F662F /* GHService.swift */,
+				3C33CA27200F4E62004C31EA /* GHParams.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -374,6 +383,9 @@
 			isa = PBXGroup;
 			children = (
 				C4754C981FFC1977002A1F61 /* GHRequestSpec.swift */,
+				3C90F852200F47C0001EB386 /* GHServiceSpec.swift */,
+				3C90F854200F4C53001EB386 /* GHClientErrorSpec.swift */,
+				3C33CA29200F4E7C004C31EA /* GHParamsSpec.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -691,6 +703,7 @@
 				3C2ABE62200769E9009F662F /* UILabel+GHIcons.swift in Sources */,
 				3C2ABE262004B841009F662F /* License.swift in Sources */,
 				C4A4054F1FFBFD3800BC54FC /* AppDelegate.swift in Sources */,
+				3C33CA28200F4E62004C31EA /* GHParams.swift in Sources */,
 				3C2ABE322004D561009F662F /* RepositoryListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -704,14 +717,17 @@
 				3C2ABE6B200773E3009F662F /* UIFont+GHIconsSpec.swift in Sources */,
 				C4122D012006E003008E096D /* TableViewPresenterDelegateStub.swift in Sources */,
 				3C2ABE71200776BD009F662F /* TableViewCellStub.swift in Sources */,
+				3C90F855200F4C53001EB386 /* GHClientErrorSpec.swift in Sources */,
 				3C2ABE69200772A9009F662F /* UILabel+GHIconsSpec.swift in Sources */,
 				3C2ABE2B2004BB71009F662F /* GHClientStub.swift in Sources */,
 				3C2ABE6D2007746D009F662F /* Date+StringSpec.swift in Sources */,
 				3C9C624D200E03A000F14604 /* GHPullRequestListServiceSpec.swift in Sources */,
 				3C2ABE2220038EB5009F662F /* GHReposityListServiceSpec.swift in Sources */,
+				3C33CA2A200F4E7C004C31EA /* GHParamsSpec.swift in Sources */,
 				C4122CFF2006DFA2008E096D /* RepositoryListPresenterSpec.swift in Sources */,
 				C4754C991FFC1977002A1F61 /* GHRequestSpec.swift in Sources */,
 				3C2ABE7620077BA9009F662F /* NibReusableSpec.swift in Sources */,
+				3C90F853200F47C0001EB386 /* GHServiceSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
