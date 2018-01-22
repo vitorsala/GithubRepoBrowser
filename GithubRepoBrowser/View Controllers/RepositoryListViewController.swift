@@ -9,7 +9,7 @@
 import UIKit
 
 final class RepositoryListViewController: UIViewController {
-    @IBOutlet private weak var tableView: UITableView?
+    @IBOutlet private weak var tableView: GHTableView?
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView?
     
     private let presenter: RepositoryListPresenter = RepositoryListPresenter()

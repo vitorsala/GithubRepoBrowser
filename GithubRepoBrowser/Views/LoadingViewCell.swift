@@ -8,5 +8,10 @@
 
 import UIKit
 
-final class LoadingViewCell: UITableViewCell {}
+final class LoadingViewCell: UITableViewCell {
+    override func awakeFromNib() {
+        self.selectionStyle = .none
+    }
+}
+
 extension LoadingViewCell: NibReusable {}

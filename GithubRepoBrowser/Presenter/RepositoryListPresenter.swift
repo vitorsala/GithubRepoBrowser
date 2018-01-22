@@ -8,13 +8,12 @@
 
 import UIKit
 
+private enum SectionIndex: Int {
+    case Repositories = 0
+    case LoadingMark
+}
+
 final class RepositoryListPresenter: NSObject {
-    
-    private let noDataIcon = GHIcons.exclamationMark
-    private let noDataText = "Nenhum dado encontrado.  :("
-    
-    private let failedDataFetchIcon = GHIcons.warningMark
-    private let failedDataFetchText = "Ocorreu um erro!\nPuxe a tela para baixo para atualizar."
     
     private let repoListService: GHReposityListService
     private var repositoryList: [Repository] = []
@@ -51,13 +50,13 @@ extension RepositoryListPresenter {
     private func loadPage(_ page: Int, completion: (() -> Void)? = nil) {
         self.isFetchingData = true
         self.didFailedDataFetch = false
-        self.repoListService.fetchRepositories(language: "Swift", page: page) { [weak self] (result) in
+        self.repoListService.fetchRepositories(language: .Swift, page: page) { [weak self] (result) in
             
             switch result {
             case let .success(repoList):
                 self?.repositoryList.append(contentsOf: repoList.items)
             case let .error(code, err):
-                self?.delegate?.showAlert(title: "Algo deu errado!", message: "Código (\(code)): \(err.localizedDescription)")
+                self?.delegate?.showAlert(title: "Something went wrong!", message: "Code (\(code)): \(err.localizedDescription)")
                 self?.didFailedDataFetch = true
             }
             self?.isFetchingData = false
@@ -82,69 +81,46 @@ extension RepositoryListPresenter {
 }
 
 extension RepositoryListPresenter {
-    private func registerCells(for tableView: UITableView) {
+    private func registerCells(for tableView: GHTableView) {
         tableView.register(RepositoryListTableViewCell.self)
         tableView.register(LoadingViewCell.self)
     }
     
-    private func setupDelegate(for tableView: UITableView) {
+    private func setupDelegate(for tableView: GHTableView) {
         tableView.delegate = self
         tableView.dataSource = self
     }
     
-    private func backgroundView(for tableView: UITableView) {
-        if !self.isFetchingData {
-            var view: TableViewBackgroundView?
-            view = TableViewBackgroundView.loadFromNib()
-            
-            if self.didFailedDataFetch {
-                view?.set(icon: self.failedDataFetchIcon, text: self.failedDataFetchText)
-            } else {
-                view?.set(icon: self.noDataIcon, text: self.noDataText)
-            }
-            
-            tableView.backgroundView = view
-        }
-    }
-    
-    private func setupDynamicRowSize(for tableView: UITableView) {
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 80
-    }
-    
-    private func setupRefreshControl(for tableView: UITableView) {
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(setup), for: UIControlEvents.valueChanged)
-        tableView.refreshControl = refreshControl
-    }
-    
-    func setupTableView(_ tableView: UITableView) {
+    func setupTableView(_ tableView: GHTableView) {
         self.registerCells(for: tableView)
         self.setupDelegate(for: tableView)
-        self.setupDynamicRowSize(for: tableView)
-        self.setupRefreshControl(for: tableView)
+        tableView.setDynamicRowSize()
+        tableView.setRefreshControl(target: self, action: #selector(setup))
+        tableView.separatorStyle = .none
     }
 }
 
 extension RepositoryListPresenter: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        if self.repositoryList.isEmpty {
-            tableView.separatorStyle = .none
-            self.backgroundView(for: tableView)
-            return 0
-        } else {
-            tableView.separatorStyle = .singleLine
-            tableView.backgroundView = nil
-            return 1
+        guard let tableView = tableView as? GHTableView else { return 0 }
+        
+        if !self.isFetchingData {
+            if self.didFailedDataFetch {
+                tableView.setBackgroundStyle(for: .Error)
+            } else {
+                let event: GHTableViewEvent = (self.repositoryList.isEmpty ? .NoData : .OK)
+                tableView.setBackgroundStyle(for: event)
+            }
         }
+        return (self.repositoryList.isEmpty ? 0 : 2)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.repositoryList.count + 1
+        return (section == SectionIndex.Repositories.rawValue ? self.repositoryList.count : 1)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row >= self.repositoryList.count {
+        if indexPath.section == SectionIndex.LoadingMark.rawValue {
             let cell = tableView.dequeueReusableCell(LoadingViewCell.self)
             return cell
         } else {
@@ -157,13 +133,14 @@ extension RepositoryListPresenter: UITableViewDataSource {
 
 extension RepositoryListPresenter: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard indexPath.section == SectionIndex.Repositories.rawValue else { return }
         self.selectedIndexPath = indexPath
         tableView.deselectRow(at: indexPath, animated: true)
         self.delegate?.perform(segue: SegueIdentifiers.showPRList)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row >= self.repositoryList.count {
+        if indexPath.section == SectionIndex.LoadingMark.rawValue {
             self.loadNextPage()
         }
     }

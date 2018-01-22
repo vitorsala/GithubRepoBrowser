@@ -28,7 +28,7 @@ final class GHReposityListServiceSpec: QuickSpec {
             describe("request") {
                 it("should bring an valid response") {
                     var res: Result<RepositoryList>! = nil
-                    service.fetchRepositories(page: 1, result: { (result) in
+                    service.fetchRepositories(language: .Swift, page: 1, result: { (result) in
                         res = result
                     })
                     expect(res).notTo(beNil())
@@ -43,7 +43,7 @@ final class GHReposityListServiceSpec: QuickSpec {
                 it("it should fail") {
                     var res: Result<RepositoryList>! = nil
                     client.shouldReturnSuccess = false
-                    service.fetchRepositories(page: 1, result: { (result) in
+                    service.fetchRepositories(language: .Swift, page: 1, result: { (result) in
                         res = result
                     })
                     expect(res).notTo(beNil())

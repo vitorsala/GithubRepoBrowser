@@ -63,6 +63,8 @@
 		C4754C9C1FFC1B2E002A1F61 /* RepositoryList01.json in Resources */ = {isa = PBXBuildFile; fileRef = C4754C9B1FFC1B2E002A1F61 /* RepositoryList01.json */; };
 		C4754CA01FFC1BF4002A1F61 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4754C9F1FFC1BF4002A1F61 /* Repository.swift */; };
 		C4754CA21FFC1C1B002A1F61 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4754CA11FFC1C1B002A1F61 /* User.swift */; };
+		C47BCAE5201675640056008A /* GHEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47BCAE4201675640056008A /* GHEnums.swift */; };
+		C47BCAE720167C240056008A /* GHTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47BCAE620167C240056008A /* GHTableView.swift */; };
 		C4A4054F1FFBFD3800BC54FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A4054E1FFBFD3800BC54FC /* AppDelegate.swift */; };
 		C4A405561FFBFD3800BC54FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4A405551FFBFD3800BC54FC /* Assets.xcassets */; };
 		C4A405591FFBFD3800BC54FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A405571FFBFD3800BC54FC /* LaunchScreen.storyboard */; };
@@ -138,6 +140,8 @@
 		C4754C9B1FFC1B2E002A1F61 /* RepositoryList01.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RepositoryList01.json; sourceTree = "<group>"; };
 		C4754C9F1FFC1BF4002A1F61 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		C4754CA11FFC1C1B002A1F61 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C47BCAE4201675640056008A /* GHEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEnums.swift; sourceTree = "<group>"; };
+		C47BCAE620167C240056008A /* GHTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHTableView.swift; sourceTree = "<group>"; };
 		C4A4054B1FFBFD3800BC54FC /* GithubRepoBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubRepoBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A4054E1FFBFD3800BC54FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4A405551FFBFD3800BC54FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -218,6 +222,7 @@
 				3C2ABE332004D56A009F662F /* RepositoryListTableViewCell.xib */,
 				3C33CA2B200F54D9004C31EA /* LoadingViewCell.swift */,
 				3C33CA2D200F54F0004C31EA /* LoadingViewCell.xib */,
+				C47BCAE620167C240056008A /* GHTableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -364,6 +369,7 @@
 				C4754C8A1FFBFFB5002A1F61 /* Result.swift */,
 				3C2ABE232004B70C009F662F /* GHService.swift */,
 				3C33CA27200F4E62004C31EA /* GHParams.swift */,
+				C47BCAE4201675640056008A /* GHEnums.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -700,6 +706,7 @@
 				3C33CA2C200F54D9004C31EA /* LoadingViewCell.swift in Sources */,
 				3C2ABE59200762A5009F662F /* SegueIndentifiers.swift in Sources */,
 				3C2ABE7F200CABC5009F662F /* GHModel.swift in Sources */,
+				C47BCAE720167C240056008A /* GHTableView.swift in Sources */,
 				3C2ABE792008B53F009F662F /* TableViewBackgroundView.swift in Sources */,
 				C4754C901FFC028A002A1F61 /* GHClient.swift in Sources */,
 				3C2ABE3F200611DF009F662F /* NibReusable.swift in Sources */,
@@ -713,6 +720,7 @@
 				C4A4054F1FFBFD3800BC54FC /* AppDelegate.swift in Sources */,
 				3C33CA28200F4E62004C31EA /* GHParams.swift in Sources */,
 				3C2ABE322004D561009F662F /* RepositoryListTableViewCell.swift in Sources */,
+				C47BCAE5201675640056008A /* GHEnums.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -57,10 +57,10 @@ class RepositoryListPresenterSpec: QuickSpec {
             }
             
             context("Table View") {
-                var tableView: UITableView!
+                var tableView: GHTableView!
                 
                 beforeEach {
-                    tableView = UITableView()
+                    tableView = GHTableView()
                     presenter.setupTableView(tableView)
                 }
                 
@@ -86,14 +86,14 @@ class RepositoryListPresenterSpec: QuickSpec {
                     
                     it("Should return loading cell when tableview is at over last element") {
                         presenter.setup()
-                        let cell = presenter.tableView(tableView, cellForRowAt: IndexPath(item: 31, section: 0))
+                        let cell = presenter.tableView(tableView, cellForRowAt: IndexPath(item: 0, section: 1))
                         expect(cell).to(beAnInstanceOf(LoadingViewCell.self))
                     }
                     
-                    it("Should return correct number of elements (num of repositories + 1)") {
+                    it("Should return correct number of elements (num of repositories)") {
                         presenter.setup()
                         let count = presenter.tableView(tableView, numberOfRowsInSection: 0)
-                        expect(count).to(equal(31))
+                        expect(count).to(equal(30))
                     }
                     
                     it("Should create an background view when table view have no elements") {
@@ -105,7 +105,7 @@ class RepositoryListPresenterSpec: QuickSpec {
                     it("Should have no background view when table view have at least 1 element") {
                         presenter.setup()
                         let sectionCount = presenter.numberOfSections(in: tableView)
-                        expect(sectionCount).to(equal(1))
+                        expect(sectionCount).to(equal(2))
                         expect(tableView.backgroundView).to(beNil())
                     }
                 }
@@ -120,10 +120,15 @@ class RepositoryListPresenterSpec: QuickSpec {
                         expect(presenter.selectedItem).toNot(beNil())
                     }
                     
+                    it("didSelectRow should ignore loading cell") {
+                        presenter.tableView(tableView, didSelectRowAt: IndexPath(row: 0, section: 1))
+                        expect(presenter.selectedItem).to(beNil())
+                    }
+                    
                     it("willDisplay should trigger an new fetch if user is in last row") {
-                        presenter.tableView(tableView, willDisplay: UITableViewCell(), forRowAt: IndexPath(row: 31, section: 0))
+                        presenter.tableView(tableView, willDisplay: UITableViewCell(), forRowAt: IndexPath(row: 0, section: 1))
                         let count = presenter.tableView(tableView, numberOfRowsInSection: 0)
-                        expect(count).to(equal(61))
+                        expect(count).toEventually(equal(60))
                     }
                 }
             }

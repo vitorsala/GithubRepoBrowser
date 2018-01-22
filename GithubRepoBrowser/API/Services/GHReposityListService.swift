@@ -15,14 +15,12 @@ final class GHReposityListService {
         self.client = client
     }
     
-    private func buildRequest(language: String?, sort: String?, page: Int?) -> GHRequest {
+    private func buildRequest(language: GHRepositoryCodeLanguage, sort: GHRepositoryListSort, page: Int) -> GHRequest {
         
         var params: GHParams = GHParams()
         
-        if let language = language {
-            params.add(key: "q", value: "language:\(language)")
-        }
-        params.add(key: "sort", value: sort)
+        params.add(key: "q", value: "language:\(language.rawValue)")
+        params.add(key: "sort", value: sort.rawValue)
         params.add(key: "page", value: page)
         
         return GHRequest(method: .get,
@@ -30,7 +28,7 @@ final class GHReposityListService {
                          parameters: params)
     }
     
-    func fetchRepositories(language: String = "Swift", sort: String = "stars", page: Int, result: @escaping (Result<RepositoryList>) -> Void) {
+    func fetchRepositories(language: GHRepositoryCodeLanguage, sort: GHRepositoryListSort = .Stars, page: Int, result: @escaping (Result<RepositoryList>) -> Void) {
         
         let request = self.buildRequest(language: language, sort: sort, page: page)
         
