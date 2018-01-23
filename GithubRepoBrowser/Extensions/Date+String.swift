@@ -9,14 +9,15 @@
 import Foundation
 
 extension Date {
-    func string(format: String) -> String {
+    var localizedString: String {
+        let locale = Locale.current
+        let template = "MM/dd/yyyy"
+        
+        let format = DateFormatter.dateFormat(fromTemplate: template, options: 0, locale: locale) ?? template
+        
         let formatter = DateFormatter()
         formatter.dateFormat = format
+        
         return formatter.string(from: self)
-    }
-    
-    func stringPTBR() -> String {
-        let formattedDate = self.string(format: "dd/MM/yyyy")
-        return formattedDate
     }
 }

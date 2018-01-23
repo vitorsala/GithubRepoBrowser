@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  GithubRepoBrowser
+
+  Created by Vitor Kawai Sala on 23/01/18.
+  Copyright © 2018 Vitor Kawai Sala. All rights reserved.
+*/
+
+// "No data found.  :("
+"bginfo.nodata" = "No data found.  :(";
+
+// "Something went wrong!\nPull screen to update."
+"bginfo.error" = "Something went wrong!\nPull screen to update.";
+
+// "Something went wrong!"
+"alert.connection_error" = "Something went wrong!";
+
+// "Code"
+"alert.code_word" = "Code";

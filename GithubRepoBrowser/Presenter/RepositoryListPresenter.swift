@@ -56,7 +56,9 @@ extension RepositoryListPresenter {
             case let .success(repoList):
                 self?.repositoryList.append(contentsOf: repoList.items)
             case let .error(code, err):
-                self?.delegate?.showAlert(title: "Something went wrong!", message: "Code (\(code)): \(err.localizedDescription)")
+                let title = NSLocalizedString("alert.connection_error", comment: "An alert to user telling that something went wrong")
+                let codeWord = NSLocalizedString("alert.code_word", comment: "Localized word for (Code)")
+                self?.delegate?.showAlert(title: title, message: "\(codeWord) (\(code)): \(err.localizedDescription)")
                 self?.didFailedDataFetch = true
             }
             self?.isFetchingData = false

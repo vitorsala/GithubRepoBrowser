@@ -21,7 +21,7 @@ extension RepositoryListTableViewCell {
     func setup(using repo: Repository) {
         self.lblRepoName?.text = repo.name
         self.lblUserName?.text = repo.owner.login
-        self.lblUpdatedDate?.text = repo.updated_at.stringPTBR()
+        self.lblUpdatedDate?.text = repo.updated_at.localizedString
         self.lblForkCount?.text = String(repo.forks_count)
         self.lblStarredCount?.text = String(repo.stargazers_count)
         self.lblDescription?.text = String(repo.description ?? "No description")
