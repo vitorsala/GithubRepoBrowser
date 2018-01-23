@@ -26,13 +26,8 @@ final class DateStringSpec: QuickSpec {
         
         context("Date") {
             it("should return correct date string") {
-                let str = date.string(format: "dd-MM-yyyy")
-                expect(str).to(equal("31-12-1969"))
-            }
-            
-            it("should return an formatted date string") {
-                let str = date.stringPTBR()
-                expect(str).to(equal("31/12/1969"))
+                let str = date.localizedString
+                expect(str).to(equal("12/31/1969"))
             }
         }
     }
