@@ -25,11 +25,9 @@ extension GHTableViewStrings.TableViewBackground {
     var string: String {
         switch self {
         case .NoData:
-            return NSLocalizedString("bginfo.nodata",
-                                     comment: "Texto alertando que não foi encontrado nenhum dado esperado.")
+            return LocalizedStrings.GHTableView.BGNoData.localizedString
         case .FailedDataFetch:
-            return NSLocalizedString("bginfo.error",
-                                     comment: "Texto alertando que ocorreu um erro.")
+            return LocalizedStrings.GHTableView.BGFetchFail.localizedString
         }
     }
     var icon: GHIcons {

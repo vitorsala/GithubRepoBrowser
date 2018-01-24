@@ -52,6 +52,11 @@
 		3C9C624D200E03A000F14604 /* GHPullRequestListServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C624C200E03A000F14604 /* GHPullRequestListServiceSpec.swift */; };
 		3CA365C3201736B700FAC054 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3CA365C5201736B700FAC054 /* Localizable.strings */; };
 		3CA365C920173A8D00FAC054 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA365C820173A8D00FAC054 /* UIViewController+Alert.swift */; };
+		3CA365CB2018829500FAC054 /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA365CA2018829500FAC054 /* LocalizedStrings.swift */; };
+		3CA365CF2018868000FAC054 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA365CE2018868000FAC054 /* String+Localization.swift */; };
+		3CA365D12018887C00FAC054 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA365D02018887C00FAC054 /* Localizable.swift */; };
+		3CA365D320188B9000FAC054 /* String+LocalizationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA365D220188B9000FAC054 /* String+LocalizationSpec.swift */; };
+		3CA365D520188DAC00FAC054 /* LocalizableSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA365D420188DAC00FAC054 /* LocalizableSpec.swift */; };
 		5AEE1829A0F4C99B5D9F7660 /* Pods_GithubRepoBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8EFAE441103AD9AE26E71E2 /* Pods_GithubRepoBrowser.framework */; };
 		C4122CFF2006DFA2008E096D /* RepositoryListPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4122CFE2006DFA2008E096D /* RepositoryListPresenterSpec.swift */; };
 		C4122D012006E003008E096D /* TableViewPresenterDelegateStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4122D002006E003008E096D /* TableViewPresenterDelegateStub.swift */; };
@@ -129,6 +134,11 @@
 		3CA365C6201738A500FAC054 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		3CA365C7201738A500FAC054 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		3CA365C820173A8D00FAC054 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		3CA365CA2018829500FAC054 /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
+		3CA365CE2018868000FAC054 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
+		3CA365D02018887C00FAC054 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
+		3CA365D220188B9000FAC054 /* String+LocalizationSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+LocalizationSpec.swift"; sourceTree = "<group>"; };
+		3CA365D420188DAC00FAC054 /* LocalizableSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableSpec.swift; sourceTree = "<group>"; };
 		5B030825F062B09874930B5F /* Pods-GithubRepoBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubRepoBrowser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GithubRepoBrowser/Pods-GithubRepoBrowser.debug.xcconfig"; sourceTree = "<group>"; };
 		6E0476368450C4A631D7B57F /* Pods-GithubRepoBrowserTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubRepoBrowserTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GithubRepoBrowserTests/Pods-GithubRepoBrowserTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B2DACD4291C1E1C1E1ADA491 /* Pods-GithubRepoBrowserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubRepoBrowserTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GithubRepoBrowserTests/Pods-GithubRepoBrowserTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -239,6 +249,7 @@
 				3C2ABE4620061872009F662F /* Date+String.swift */,
 				3C2ABE5F20076921009F662F /* UIFont+GHIcons.swift */,
 				3C2ABE61200769E9009F662F /* UILabel+GHIcons.swift */,
+				3CA365CE2018868000FAC054 /* String+Localization.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -250,6 +261,7 @@
 				C4A405571FFBFD3800BC54FC /* LaunchScreen.storyboard */,
 				3C2ABE352004D6FB009F662F /* octicons.ttf */,
 				3CA365C5201736B700FAC054 /* Localizable.strings */,
+				3CA365CA2018829500FAC054 /* LocalizedStrings.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -262,6 +274,7 @@
 				3C2ABE86200CAE27009F662F /* NibLoadable.swift */,
 				3C2ABE82200CADD4009F662F /* Reusable.swift */,
 				3C2ABE3E200611DF009F662F /* NibReusable.swift */,
+				3CA365D02018887C00FAC054 /* Localizable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -290,6 +303,7 @@
 				3C2ABE6A200773E3009F662F /* UIFont+GHIconsSpec.swift */,
 				3C2ABE6C2007746D009F662F /* Date+StringSpec.swift */,
 				3C2ABE6E200775D8009F662F /* UITableView+ReusableSpec.swift */,
+				3CA365D220188B9000FAC054 /* String+LocalizationSpec.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -298,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				3C2ABE7520077BA9009F662F /* NibReusableSpec.swift */,
+				3CA365D420188DAC00FAC054 /* LocalizableSpec.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -710,9 +725,11 @@
 				3C2ABE83200CADD4009F662F /* Reusable.swift in Sources */,
 				3C2ABE4720061872009F662F /* Date+String.swift in Sources */,
 				3C33CA2C200F54D9004C31EA /* LoadingViewCell.swift in Sources */,
+				3CA365CB2018829500FAC054 /* LocalizedStrings.swift in Sources */,
 				3CA365C920173A8D00FAC054 /* UIViewController+Alert.swift in Sources */,
 				3C2ABE59200762A5009F662F /* SegueIndentifiers.swift in Sources */,
 				3C2ABE7F200CABC5009F662F /* GHModel.swift in Sources */,
+				3CA365CF2018868000FAC054 /* String+Localization.swift in Sources */,
 				C47BCAE720167C240056008A /* GHTableView.swift in Sources */,
 				3C2ABE792008B53F009F662F /* TableViewBackgroundView.swift in Sources */,
 				C4754C901FFC028A002A1F61 /* GHClient.swift in Sources */,
@@ -727,6 +744,7 @@
 				C4A4054F1FFBFD3800BC54FC /* AppDelegate.swift in Sources */,
 				3C33CA28200F4E62004C31EA /* GHParams.swift in Sources */,
 				3C2ABE322004D561009F662F /* RepositoryListTableViewCell.swift in Sources */,
+				3CA365D12018887C00FAC054 /* Localizable.swift in Sources */,
 				C47BCAE5201675640056008A /* GHEnums.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -744,12 +762,14 @@
 				3C2ABE69200772A9009F662F /* UILabel+GHIconsSpec.swift in Sources */,
 				3C2ABE2B2004BB71009F662F /* GHClientStub.swift in Sources */,
 				3C2ABE6D2007746D009F662F /* Date+StringSpec.swift in Sources */,
+				3CA365D520188DAC00FAC054 /* LocalizableSpec.swift in Sources */,
 				3C9C624D200E03A000F14604 /* GHPullRequestListServiceSpec.swift in Sources */,
 				3C2ABE2220038EB5009F662F /* GHReposityListServiceSpec.swift in Sources */,
 				3C33CA2A200F4E7C004C31EA /* GHParamsSpec.swift in Sources */,
 				C4122CFF2006DFA2008E096D /* RepositoryListPresenterSpec.swift in Sources */,
 				C4754C991FFC1977002A1F61 /* GHRequestSpec.swift in Sources */,
 				3C2ABE7620077BA9009F662F /* NibReusableSpec.swift in Sources */,
+				3CA365D320188B9000FAC054 /* String+LocalizationSpec.swift in Sources */,
 				3C90F853200F47C0001EB386 /* GHServiceSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
