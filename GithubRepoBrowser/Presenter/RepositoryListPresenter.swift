@@ -41,6 +41,7 @@ final class RepositoryListPresenter: NSObject {
 
 extension RepositoryListPresenter {
     @objc func setup() {
+        self.page = 1
         self.delegate?.showStatusIndicator()
         self.loadPage(self.page) { [weak self] in
             self?.delegate?.hideStatusIndicator()
