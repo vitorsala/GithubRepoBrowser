@@ -267,11 +267,11 @@
 		3C2ABE3820060EBD009F662F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3CA365CA2018829500FAC054 /* LocalizedStrings.swift */,
 				C4A4054E1FFBFD3800BC54FC /* AppDelegate.swift */,
 				C4A405571FFBFD3800BC54FC /* LaunchScreen.storyboard */,
 				3C2ABE352004D6FB009F662F /* octicons.ttf */,
 				3CA365C5201736B700FAC054 /* Localizable.strings */,
-				3CA365CA2018829500FAC054 /* LocalizedStrings.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";

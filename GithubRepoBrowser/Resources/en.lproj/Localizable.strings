@@ -17,3 +17,6 @@
 
 // "Code"
 "alert.code_word" = "Code";
+
+//
+"prlist.open_info" = "opened on %@ by %@";

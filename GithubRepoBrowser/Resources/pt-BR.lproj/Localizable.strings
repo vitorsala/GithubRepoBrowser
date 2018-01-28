@@ -17,3 +17,6 @@
 
 // "Code"
 "alert.code_word" = "Código";
+
+//
+"prlist.open_info" = "aberto no dia %@ por %@";

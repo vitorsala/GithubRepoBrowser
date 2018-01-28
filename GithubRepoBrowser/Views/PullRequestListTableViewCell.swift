@@ -15,9 +15,15 @@ final class PullRequestListTableViewCell: UITableViewCell {
 }
 
 extension PullRequestListTableViewCell {
+    private func openInfo(for pr: PullRequest) {
+        let unformattedString = LocalizedStrings.PullRequestListTableViewCell.OpenInfo.localizedString
+        let formattedString = String(format: unformattedString, pr.created_at.localizedString, pr.user.login)
+        self.lblPROpenInfo?.text = formattedString
+    }
+    
     func setup(using pr: PullRequest) {
         self.lblPRTitle?.text = pr.title
-        self.lblPROpenInfo?.text = pr.created_at.localizedString
         self.lblPRNumber?.text = "#\(pr.number)"
+        self.openInfo(for: pr)
     }
 }
