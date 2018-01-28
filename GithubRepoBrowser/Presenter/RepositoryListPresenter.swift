@@ -94,6 +94,17 @@ extension RepositoryListPresenter {
         tableView.dataSource = self
     }
     
+    private func backgroundView(for tableView: GHTableView) {
+        if !self.isFetchingData {
+            if self.didFailedDataFetch {
+                tableView.setBackgroundStyle(for: .Error)
+            } else {
+                let event: GHTableViewEvent = (self.repositoryList.isEmpty ? .NoData : .OK)
+                tableView.setBackgroundStyle(for: event)
+            }
+        }
+    }
+    
     func setupTableView(_ tableView: GHTableView) {
         self.registerCells(for: tableView)
         self.setupDelegate(for: tableView)
@@ -106,15 +117,7 @@ extension RepositoryListPresenter {
 extension RepositoryListPresenter: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         guard let tableView = tableView as? GHTableView else { return 0 }
-        
-        if !self.isFetchingData {
-            if self.didFailedDataFetch {
-                tableView.setBackgroundStyle(for: .Error)
-            } else {
-                let event: GHTableViewEvent = (self.repositoryList.isEmpty ? .NoData : .OK)
-                tableView.setBackgroundStyle(for: event)
-            }
-        }
+        self.backgroundView(for: tableView)
         return (self.repositoryList.isEmpty ? 0 : 2)
     }
     
