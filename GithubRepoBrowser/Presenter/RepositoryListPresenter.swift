@@ -40,14 +40,6 @@ final class RepositoryListPresenter: NSObject {
 }
 
 extension RepositoryListPresenter {
-    @objc func setup() {
-        self.page = 1
-        self.delegate?.showStatusIndicator()
-        self.loadPage(self.page) { [weak self] in
-            self?.delegate?.hideStatusIndicator()
-        }
-    }
-    
     private func loadPage(_ page: Int, completion: (() -> Void)? = nil) {
         self.isFetchingData = true
         self.didFailedDataFetch = false
@@ -111,6 +103,14 @@ extension RepositoryListPresenter {
         tableView.setDynamicRowSize()
         tableView.setRefreshControl(target: self, action: #selector(setup))
         tableView.separatorStyle = .none
+    }
+    
+    @objc func setup() {
+        self.page = 1
+        self.delegate?.showStatusIndicator()
+        self.loadPage(self.page) { [weak self] in
+            self?.delegate?.hideStatusIndicator()
+        }
     }
 }
 

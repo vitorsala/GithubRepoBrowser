@@ -61,6 +61,7 @@
 		3CA365DA201B27DF00FAC054 /* PullRequestListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA365D9201B27DF00FAC054 /* PullRequestListPresenter.swift */; };
 		3CA365DD201B281800FAC054 /* PullRequestListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA365DB201B281800FAC054 /* PullRequestListTableViewCell.swift */; };
 		3CA365E0201B2A7700FAC054 /* PullRequestListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CA365DF201B2A7700FAC054 /* PullRequestListTableViewCell.xib */; };
+		3CA365E2201F252100FAC054 /* PullRequestListPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA365E1201F252100FAC054 /* PullRequestListPresenterSpec.swift */; };
 		5AEE1829A0F4C99B5D9F7660 /* Pods_GithubRepoBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8EFAE441103AD9AE26E71E2 /* Pods_GithubRepoBrowser.framework */; };
 		C4122CFF2006DFA2008E096D /* RepositoryListPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4122CFE2006DFA2008E096D /* RepositoryListPresenterSpec.swift */; };
 		C4122D012006E003008E096D /* TableViewPresenterDelegateStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4122D002006E003008E096D /* TableViewPresenterDelegateStub.swift */; };
@@ -147,6 +148,7 @@
 		3CA365D9201B27DF00FAC054 /* PullRequestListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequestListPresenter.swift; sourceTree = "<group>"; };
 		3CA365DB201B281800FAC054 /* PullRequestListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequestListTableViewCell.swift; sourceTree = "<group>"; };
 		3CA365DF201B2A7700FAC054 /* PullRequestListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PullRequestListTableViewCell.xib; sourceTree = "<group>"; };
+		3CA365E1201F252100FAC054 /* PullRequestListPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequestListPresenterSpec.swift; sourceTree = "<group>"; };
 		5B030825F062B09874930B5F /* Pods-GithubRepoBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubRepoBrowser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GithubRepoBrowser/Pods-GithubRepoBrowser.debug.xcconfig"; sourceTree = "<group>"; };
 		6E0476368450C4A631D7B57F /* Pods-GithubRepoBrowserTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubRepoBrowserTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GithubRepoBrowserTests/Pods-GithubRepoBrowserTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B2DACD4291C1E1C1E1ADA491 /* Pods-GithubRepoBrowserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubRepoBrowserTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GithubRepoBrowserTests/Pods-GithubRepoBrowserTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				C4122CFE2006DFA2008E096D /* RepositoryListPresenterSpec.swift */,
+				3CA365E1201F252100FAC054 /* PullRequestListPresenterSpec.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -779,6 +782,7 @@
 			files = (
 				C4754C961FFC0F1F002A1F61 /* GHClientSpec.swift in Sources */,
 				3C2ABE6F200775D8009F662F /* UITableView+ReusableSpec.swift in Sources */,
+				3CA365E2201F252100FAC054 /* PullRequestListPresenterSpec.swift in Sources */,
 				3C2ABE6B200773E3009F662F /* UIFont+GHIconsSpec.swift in Sources */,
 				C4122D012006E003008E096D /* TableViewPresenterDelegateStub.swift in Sources */,
 				3C2ABE71200776BD009F662F /* TableViewCellStub.swift in Sources */,

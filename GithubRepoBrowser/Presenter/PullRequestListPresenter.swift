@@ -9,14 +9,22 @@
 import UIKit
 
 final class PullRequestListPresenter: NSObject {
+    
+    private let prService: GHPullRequestListService
     private var isFetchingData: Bool = false
     private var didFailedDataFetch: Bool = false
+    private var selectedIndexPath: IndexPath?
     
     weak var delegate: TableViewPresenterDelegate?
     var repository: Repository?
     var prList: [PullRequest] = []
     
-    private let prService: GHPullRequestListService
+    var selectedItem: PullRequest? {
+        guard let indexPath = self.selectedIndexPath else {
+            return nil
+        }
+        return self.prList[indexPath.row]
+    }
     
     init(prService: GHPullRequestListService = GHPullRequestListService()) {
         self.prService = prService
@@ -27,6 +35,7 @@ extension PullRequestListPresenter {
     @objc func loadPRList() {
         guard let repo = self.repository else { return }
         self.isFetchingData = true
+        self.didFailedDataFetch = false
         self.prService.fetchPullrequest(for: repo) { [weak self] (result) in
             switch result {
             case let .success(prs):
@@ -37,9 +46,9 @@ extension PullRequestListPresenter {
                 self?.delegate?.showAlert(title: title, message: "\(codeWord) (\(code)): \(error.localizedDescription)")
                 self?.didFailedDataFetch = true
             }
+            self?.isFetchingData = false
             self?.delegate?.hideStatusIndicator()
             self?.delegate?.reloadTableViewData()
-            self?.isFetchingData = false
         }
     }
 }
@@ -100,5 +109,6 @@ extension PullRequestListPresenter: UITableViewDataSource {
 extension PullRequestListPresenter: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        self.selectedIndexPath = indexPath
     }
 }
