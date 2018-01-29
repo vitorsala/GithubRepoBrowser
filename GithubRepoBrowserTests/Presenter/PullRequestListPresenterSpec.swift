@@ -1,8 +1,8 @@
 //
-//  RepositoryListPresenterSpec.swift
+//  PullRequestListPresenterSpec.swift
 //  GithubRepoBrowserTests
 //
-//  Created by Vitor Kawai Sala on 10/01/18.
+//  Created by Vitor Kawai Sala on 29/01/18.
 //  Copyright © 2018 Vitor Kawai Sala. All rights reserved.
 //
 
@@ -12,18 +12,35 @@ import Quick
 
 @testable import GithubRepoBrowser
 
-final class RepositoryListPresenterSpec: QuickSpec {
+final class PullRequestListPresenterSpec: QuickSpec {
     override func spec() {
-        var presenter: RepositoryListPresenter!
+        var presenter: PullRequestListPresenter!
         var stub: TableViewPresenterDelegateStub!
         var client: GHClientStub!
         
         beforeEach {
             client = GHClientStub()
-            let manager = GHReposityListService(client: client)
-            presenter = RepositoryListPresenter(repoListService: manager)
+            let manager = GHPullRequestListService(client: client)
+            presenter = PullRequestListPresenter(prService: manager)
             stub = TableViewPresenterDelegateStub()
             presenter.delegate = stub
+            
+            let user = User(id: 000,
+                            login: "Username",
+                            avatar_url: nil,
+                            url: "url")
+            let repo = Repository(id: 0000,
+                                  name: "RepositoryName",
+                                  description: "descriptio ",
+                                  created_at: Date(),
+                                  updated_at: Date(),
+                                  url: "test",
+                                  stargazers_count: 2,
+                                  forks_count: 1,
+                                  owner: user,
+                                  license: nil)
+            
+            presenter.repository = repo
         }
         
         afterEach {
@@ -33,12 +50,8 @@ final class RepositoryListPresenterSpec: QuickSpec {
         }
         
         describe("Presenter") {
-            context("Core") {
-                it("selectedItem should return nil when no selection were made") {
-                    expect(presenter.selectedItem).to(beNil())
-                }
-                
-                it("Should fetch data and call delegate") {
+            describe("Core") {
+                it("Should be able to fetch data and call delegate on finish") {
                     presenter.setup()
                     expect(stub.showAlertTriggered).to(beFalse())
                     expect(stub.showStatusIndicatorTriggered).to(beTrue())
@@ -56,7 +69,7 @@ final class RepositoryListPresenterSpec: QuickSpec {
                 }
             }
             
-            context("Table View") {
+            describe("table view") {
                 var tableView: GHTableView!
                 
                 beforeEach {
@@ -81,19 +94,13 @@ final class RepositoryListPresenterSpec: QuickSpec {
                     it("Should return correct cell when IndexPath do not point to last element") {
                         presenter.setup()
                         let cell = presenter.tableView(tableView, cellForRowAt: IndexPath(item: 0, section: 0))
-                        expect(cell).to(beAnInstanceOf(RepositoryListTableViewCell.self))
+                        expect(cell).to(beAnInstanceOf(PullRequestListTableViewCell.self))
                     }
                     
-                    it("Should return loading cell when tableview is at over last element") {
-                        presenter.setup()
-                        let cell = presenter.tableView(tableView, cellForRowAt: IndexPath(item: 0, section: 1))
-                        expect(cell).to(beAnInstanceOf(LoadingViewCell.self))
-                    }
-                    
-                    it("Should return correct number of elements (num of repositories)") {
+                    it("Should return correct number of elements (num of pull requests)") {
                         presenter.setup()
                         let count = presenter.tableView(tableView, numberOfRowsInSection: 0)
-                        expect(count).to(equal(30))
+                        expect(count).to(equal(15))
                     }
                     
                     it("Should create an background view when table view have no elements") {
@@ -105,7 +112,7 @@ final class RepositoryListPresenterSpec: QuickSpec {
                     it("Should have no background view when table view have at least 1 element") {
                         presenter.setup()
                         let sectionCount = presenter.numberOfSections(in: tableView)
-                        expect(sectionCount).to(equal(2))
+                        expect(sectionCount).to(equal(1))
                         expect(tableView.backgroundView).to(beNil())
                     }
                 }
@@ -118,17 +125,6 @@ final class RepositoryListPresenterSpec: QuickSpec {
                     it("didSelectRow should select an valid repository") {
                         presenter.tableView(tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
                         expect(presenter.selectedItem).toNot(beNil())
-                    }
-                    
-                    it("didSelectRow should ignore loading cell") {
-                        presenter.tableView(tableView, didSelectRowAt: IndexPath(row: 0, section: 1))
-                        expect(presenter.selectedItem).to(beNil())
-                    }
-                    
-                    it("willDisplay should trigger an new fetch if user is in last row") {
-                        presenter.tableView(tableView, willDisplay: UITableViewCell(), forRowAt: IndexPath(row: 0, section: 1))
-                        let count = presenter.tableView(tableView, numberOfRowsInSection: 0)
-                        expect(count).toEventually(equal(60))
                     }
                 }
             }

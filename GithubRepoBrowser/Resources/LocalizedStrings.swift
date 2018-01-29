@@ -18,4 +18,8 @@ enum LocalizedStrings {
         case BGNoData = "bginfo.nodata"
         case BGFetchFail = "bginfo.error"
     }
+    
+    enum PullRequestListTableViewCell: String, Localizable {
+        case OpenInfo = "prlist.open_info"
+    }
 }

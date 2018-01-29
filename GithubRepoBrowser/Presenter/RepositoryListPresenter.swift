@@ -40,14 +40,6 @@ final class RepositoryListPresenter: NSObject {
 }
 
 extension RepositoryListPresenter {
-    @objc func setup() {
-        self.page = 1
-        self.delegate?.showStatusIndicator()
-        self.loadPage(self.page) { [weak self] in
-            self?.delegate?.hideStatusIndicator()
-        }
-    }
-    
     private func loadPage(_ page: Int, completion: (() -> Void)? = nil) {
         self.isFetchingData = true
         self.didFailedDataFetch = false
@@ -94,19 +86,7 @@ extension RepositoryListPresenter {
         tableView.dataSource = self
     }
     
-    func setupTableView(_ tableView: GHTableView) {
-        self.registerCells(for: tableView)
-        self.setupDelegate(for: tableView)
-        tableView.setDynamicRowSize()
-        tableView.setRefreshControl(target: self, action: #selector(setup))
-        tableView.separatorStyle = .none
-    }
-}
-
-extension RepositoryListPresenter: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        guard let tableView = tableView as? GHTableView else { return 0 }
-        
+    private func backgroundView(for tableView: GHTableView) {
         if !self.isFetchingData {
             if self.didFailedDataFetch {
                 tableView.setBackgroundStyle(for: .Error)
@@ -115,6 +95,29 @@ extension RepositoryListPresenter: UITableViewDataSource {
                 tableView.setBackgroundStyle(for: event)
             }
         }
+    }
+    
+    func setupTableView(_ tableView: GHTableView) {
+        self.registerCells(for: tableView)
+        self.setupDelegate(for: tableView)
+        tableView.setDynamicRowSize()
+        tableView.setRefreshControl(target: self, action: #selector(setup))
+        tableView.separatorStyle = .none
+    }
+    
+    @objc func setup() {
+        self.page = 1
+        self.delegate?.showStatusIndicator()
+        self.loadPage(self.page) { [weak self] in
+            self?.delegate?.hideStatusIndicator()
+        }
+    }
+}
+
+extension RepositoryListPresenter: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        guard let tableView = tableView as? GHTableView else { return 0 }
+        self.backgroundView(for: tableView)
         return (self.repositoryList.isEmpty ? 0 : 2)
     }
     
