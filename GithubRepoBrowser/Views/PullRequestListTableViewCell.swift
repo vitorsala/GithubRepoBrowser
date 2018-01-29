@@ -27,3 +27,5 @@ extension PullRequestListTableViewCell {
         self.openInfo(for: pr)
     }
 }
+
+extension PullRequestListTableViewCell: NibReusable {}

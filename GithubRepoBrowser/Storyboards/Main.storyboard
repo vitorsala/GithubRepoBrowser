@@ -70,25 +70,37 @@
         <!--Pull Request List-->
         <scene sceneID="SrF-ZL-fwL">
             <objects>
-                <viewController title="Pull Request List" id="aTp-CH-l2t" sceneMemberID="viewController">
+                <viewController title="Pull Request List" id="aTp-CH-l2t" customClass="PullRequestListViewController" customModule="GithubRepoBrowser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ni4-uv-UJ0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="m1v-dU-y0l">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="m1v-dU-y0l" customClass="GHTableView" customModule="GithubRepoBrowser" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="2gL-Ov-jor">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="vVp-Tu-g6g" firstAttribute="bottom" secondItem="2gL-Ov-jor" secondAttribute="bottom" id="80P-YX-b9c"/>
                             <constraint firstItem="vVp-Tu-g6g" firstAttribute="trailing" secondItem="m1v-dU-y0l" secondAttribute="trailing" id="ENb-yH-zEv"/>
                             <constraint firstItem="m1v-dU-y0l" firstAttribute="leading" secondItem="vVp-Tu-g6g" secondAttribute="leading" id="JlA-Q3-N03"/>
                             <constraint firstItem="vVp-Tu-g6g" firstAttribute="bottom" secondItem="m1v-dU-y0l" secondAttribute="bottom" id="Uh1-Ss-jKu"/>
                             <constraint firstItem="m1v-dU-y0l" firstAttribute="top" secondItem="vVp-Tu-g6g" secondAttribute="top" id="hP2-fl-BNd"/>
+                            <constraint firstItem="2gL-Ov-jor" firstAttribute="top" secondItem="vVp-Tu-g6g" secondAttribute="top" id="iu0-J4-zIV"/>
+                            <constraint firstItem="2gL-Ov-jor" firstAttribute="leading" secondItem="vVp-Tu-g6g" secondAttribute="leading" id="jW4-2h-s68"/>
+                            <constraint firstItem="vVp-Tu-g6g" firstAttribute="trailing" secondItem="2gL-Ov-jor" secondAttribute="trailing" id="yF4-Ic-jpc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vVp-Tu-g6g"/>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="2gL-Ov-jor" id="MpU-ah-o29"/>
+                        <outlet property="tableView" destination="m1v-dU-y0l" id="ph3-gQ-c2H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gqC-NP-xDo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

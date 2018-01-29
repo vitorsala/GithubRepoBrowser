@@ -19,6 +19,15 @@ final class RepositoryListViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier,
+            identifier == SegueIdentifiers.showPRList.rawValue {
+            
+            if let vc = segue.destination as? PullRequestListViewController,
+                let selectedItem = self.presenter.selectedItem {
+                
+                vc.set(repository: selectedItem)
+            }
+        }
     }
 }
 
