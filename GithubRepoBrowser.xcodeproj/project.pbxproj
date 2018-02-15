@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		33E8573CA88B288FA969794C /* Pods_GithubRepoBrowserTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EC0D4452C701624195301FD /* Pods_GithubRepoBrowserTests.framework */; };
+		3C1079A02035AC8800DED8D3 /* GHClientRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C10799F2035AC8800DED8D3 /* GHClientRouter.swift */; };
+		3C1079A22035ACE000DED8D3 /* GHClientAF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1079A12035ACE000DED8D3 /* GHClientAF.swift */; };
 		3C2ABE1D2003702D009F662F /* GHReposityListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE1C2003702D009F662F /* GHReposityListService.swift */; };
 		3C2ABE2220038EB5009F662F /* GHReposityListServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE2120038EB5009F662F /* GHReposityListServiceSpec.swift */; };
 		3C2ABE242004B70C009F662F /* GHService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2ABE232004B70C009F662F /* GHService.swift */; };
@@ -93,6 +95,8 @@
 
 /* Begin PBXFileReference section */
 		0EC0D4452C701624195301FD /* Pods_GithubRepoBrowserTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubRepoBrowserTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C10799F2035AC8800DED8D3 /* GHClientRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHClientRouter.swift; sourceTree = "<group>"; };
+		3C1079A12035ACE000DED8D3 /* GHClientAF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHClientAF.swift; sourceTree = "<group>"; };
 		3C2ABE1C2003702D009F662F /* GHReposityListService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GHReposityListService.swift; sourceTree = "<group>"; };
 		3C2ABE2120038EB5009F662F /* GHReposityListServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHReposityListServiceSpec.swift; sourceTree = "<group>"; };
 		3C2ABE232004B70C009F662F /* GHService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHService.swift; sourceTree = "<group>"; };
@@ -421,6 +425,8 @@
 			isa = PBXGroup;
 			children = (
 				C4754C8F1FFC028A002A1F61 /* GHClient.swift */,
+				3C10799F2035AC8800DED8D3 /* GHClientRouter.swift */,
+				3C1079A12035ACE000DED8D3 /* GHClientAF.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -741,6 +747,7 @@
 				3C2ABE2D2004CD18009F662F /* GHClientError.swift in Sources */,
 				3C2ABE5C2007688E009F662F /* GHIcons.swift in Sources */,
 				3C2ABE4E20061C5C009F662F /* RepositoryListPresenter.swift in Sources */,
+				3C1079A22035ACE000DED8D3 /* GHClientAF.swift in Sources */,
 				3C2ABE1D2003702D009F662F /* GHReposityListService.swift in Sources */,
 				3C2ABE87200CAE27009F662F /* NibLoadable.swift in Sources */,
 				C4754CA01FFC1BF4002A1F61 /* Repository.swift in Sources */,
@@ -764,6 +771,7 @@
 				3C2ABE7D200CABA4009F662F /* PullRequest.swift in Sources */,
 				3C2ABE89200CAF8D009F662F /* GHPullRequestListService.swift in Sources */,
 				3C2ABE4320061379009F662F /* UITableView+Reusable.swift in Sources */,
+				3C1079A02035AC8800DED8D3 /* GHClientRouter.swift in Sources */,
 				C4754C921FFC0311002A1F61 /* GHRequest.swift in Sources */,
 				3C2ABE62200769E9009F662F /* UILabel+GHIcons.swift in Sources */,
 				3CA365D8201B27CC00FAC054 /* PullRequestListViewController.swift in Sources */,

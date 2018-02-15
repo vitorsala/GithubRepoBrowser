@@ -11,7 +11,7 @@ import Foundation
 final class GHReposityListService {
     private let client: GHClient
     
-    init(client: GHClient = GHClientImpl()) {
+    init(client: GHClient = GHClientRouter.apiClient) {
         self.client = client
     }
     
