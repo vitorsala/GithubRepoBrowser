@@ -49,6 +49,7 @@
 		3C33CA2A200F4E7C004C31EA /* GHParamsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C33CA29200F4E7C004C31EA /* GHParamsSpec.swift */; };
 		3C33CA2C200F54D9004C31EA /* LoadingViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C33CA2B200F54D9004C31EA /* LoadingViewCell.swift */; };
 		3C33CA2E200F54F0004C31EA /* LoadingViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C33CA2D200F54F0004C31EA /* LoadingViewCell.xib */; };
+		3C6FFDDB2035F0DB00D24078 /* GHClientUS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6FFDDA2035F0DB00D24078 /* GHClientUS.swift */; };
 		3C90F853200F47C0001EB386 /* GHServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C90F852200F47C0001EB386 /* GHServiceSpec.swift */; };
 		3C90F855200F4C53001EB386 /* GHClientErrorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C90F854200F4C53001EB386 /* GHClientErrorSpec.swift */; };
 		3C9C624D200E03A000F14604 /* GHPullRequestListServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C624C200E03A000F14604 /* GHPullRequestListServiceSpec.swift */; };
@@ -136,6 +137,7 @@
 		3C33CA29200F4E7C004C31EA /* GHParamsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHParamsSpec.swift; sourceTree = "<group>"; };
 		3C33CA2B200F54D9004C31EA /* LoadingViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewCell.swift; sourceTree = "<group>"; };
 		3C33CA2D200F54F0004C31EA /* LoadingViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingViewCell.xib; sourceTree = "<group>"; };
+		3C6FFDDA2035F0DB00D24078 /* GHClientUS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHClientUS.swift; sourceTree = "<group>"; };
 		3C90F852200F47C0001EB386 /* GHServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHServiceSpec.swift; sourceTree = "<group>"; };
 		3C90F854200F4C53001EB386 /* GHClientErrorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHClientErrorSpec.swift; sourceTree = "<group>"; };
 		3C9C624C200E03A000F14604 /* GHPullRequestListServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHPullRequestListServiceSpec.swift; sourceTree = "<group>"; };
@@ -427,6 +429,7 @@
 				C4754C8F1FFC028A002A1F61 /* GHClient.swift */,
 				3C10799F2035AC8800DED8D3 /* GHClientRouter.swift */,
 				3C1079A12035ACE000DED8D3 /* GHClientAF.swift */,
+				3C6FFDDA2035F0DB00D24078 /* GHClientUS.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -749,6 +752,7 @@
 				3C2ABE4E20061C5C009F662F /* RepositoryListPresenter.swift in Sources */,
 				3C1079A22035ACE000DED8D3 /* GHClientAF.swift in Sources */,
 				3C2ABE1D2003702D009F662F /* GHReposityListService.swift in Sources */,
+				3C6FFDDB2035F0DB00D24078 /* GHClientUS.swift in Sources */,
 				3C2ABE87200CAE27009F662F /* NibLoadable.swift in Sources */,
 				C4754CA01FFC1BF4002A1F61 /* Repository.swift in Sources */,
 				C4754CA21FFC1C1B002A1F61 /* User.swift in Sources */,
